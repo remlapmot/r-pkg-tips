@@ -47,4 +47,5 @@ knitr::include_graphics("img/github-desktop-select-lines.png")
 ```  
   
 - I prefer not to keep my git repos in folder that is also sync'd with OneDrive (because when you render/build the OneDrive sync is very annoying)
-- Think about including tests with testthat or another testing package.
+- Think about including tests with testthat or another testing package
+- When contributing to a new package run `devtools::install_dev_deps()` to install all Depends, Imports, and Suggests packages
