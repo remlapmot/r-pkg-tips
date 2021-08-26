@@ -36,3 +36,4 @@ require("Hmisc")
   - Always work in a new branch (especially if working with others)
   - Make changes then work through changes - selecting relevant changed lines - giving sensible commit messages, i.e. not just one massive commit with message "Edits"!
 - I prefer not to keep my git repos in folder that is also sync'd with OneDrive (because when you render/build the OneDrive sync is very annoying)
+- Think about including tests with testthat or another testing package.
