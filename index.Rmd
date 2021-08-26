@@ -14,9 +14,10 @@ output:
     anchor_sections: true
 ---
 
-```{r include=FALSE}
+```{r setup, include=FALSE}
 require("Hmisc")
 ```
+
 `r Hmisc::hidingTOC(levels = 2)`
 
 - Use `R CMD check`/`devtools::check()`/Check button in RStudio Build pane
@@ -35,5 +36,10 @@ require("Hmisc")
 - Use a visual git editor, e.g. GitHub desktop
   - Always work in a new branch (especially if working with others)
   - Make changes then work through changes - selecting relevant changed lines - giving sensible commit messages, i.e. not just one massive commit with message "Edits"!
+
+```{r echo=FALSE}
+knitr::include_graphics("img/github-desktop-select-lines.png")
+```  
+  
 - I prefer not to keep my git repos in folder that is also sync'd with OneDrive (because when you render/build the OneDrive sync is very annoying)
 - Think about including tests with testthat or another testing package.
