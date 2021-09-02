@@ -21,6 +21,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 `r Hmisc::hidingTOC(levels = 2)`
 
+- Refer to https://r-pkgs.org/ as much as you need to!
 - Define R package as an RStudio project (`.Rproj` file) to get the very helpful Build pane 
   - https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
   - `BuildType: Package` (`None`/`Package`/`Makefile`/`Website`/`Custom`) - Build pane appears for all but `None`
@@ -38,7 +39,6 @@ knitr::opts_chunk$set(echo = FALSE)
 - Use classes for your functions (S3 easiest system; S4, RC)
   - Under S3 your class probably needs `print`, `summary`, `print.summary` methods, defined as e.g. `print.mynewclass <- function(){}`
 - Use win-builder for a further check https://win-builder.r-project.org/
-- Refer to https://r-pkgs.org/
 - Use a visual git editor, e.g. GitHub desktop
   - Always work in a new branch (especially if working with others)
   - Make changes then work through changes - selecting relevant changed lines - giving sensible commit messages, i.e. not just one massive commit with message "Edits"!
