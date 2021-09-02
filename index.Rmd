@@ -50,4 +50,4 @@ knitr::opts_chunk$set(echo = FALSE)
   
 - I prefer not to keep my git repositories in a folder that is also synchronized with OneDrive/Google Drive, e.g. when you render an R Markdown file the OneDrive sync of all the auxialliary files that are created can be very annoying
 - Think about including tests with testthat or another testing package
-- When contributing to a new package run `devtools::install_dev_deps()` to install all Depends, Imports, and Suggests packages
+- When contributing to a new package run `devtools::install_dev_deps()` to install all packages under Depends, Imports, and Suggests in its DESCRIPTION file
