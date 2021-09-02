@@ -41,7 +41,7 @@ knitr::opts_chunk$set(echo = FALSE)
   - Only use dots/periods in your function names if you are coding under the S3 class system
 - Use win-builder for a further check https://win-builder.r-project.org/
 - Use a visual git editor, e.g. GitHub desktop
-  - Always work in a new branch (especially if working with others)
+  - Always work in a new branch, especially if working with others. Then merge into main/master when you're sure your changes are what you want
   - Make changes then work through changes - selecting relevant changed lines - giving sensible commit messages, i.e. not just one massive commit with message "Edits"!
 
     ```{r}
