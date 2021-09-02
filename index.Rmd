@@ -4,11 +4,11 @@ author: "Tom Palmer"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   html_document:
-    toc: true
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
-    toc_depth: 2
+    # toc: true
+    # toc_float:
+    #   collapsed: false
+    #   smooth_scroll: false
+    # toc_depth: 2
     code_download: true
     code_folding: show
     anchor_sections: true
@@ -19,7 +19,7 @@ require("Hmisc")
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-`r Hmisc::hidingTOC(levels = 2)`
+<!-- `r Hmisc::hidingTOC(levels = 2)` -->
 
 - Refer to https://r-pkgs.org/ as much as you need to!
 - Define R package as an RStudio project (`.Rproj` file) to get the very helpful Build pane 
