@@ -1,5 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 *.html linguist-vendored
-*.Rmd linguist-detectable
+*.Rmd linguist-language=RMarkdown linguist-detectable
 *.rmd linguist-detectable
