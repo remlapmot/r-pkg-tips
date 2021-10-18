@@ -72,7 +72,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
   - You can even setup a GitHub Action to run this on every commit into repo
     - `usethis::use_github_action()`/`usethis::use_tidy_github_actions()` or copy from https://github.com/r-lib/actions
-  - Stata and python have no such similarly thorough checking system - so well worth using
+  - Stata and python have no such similarly thorough checking system, so well worth using
   - If your package passes `R CMD check` then you can build a pkgdown website for your package with one command `pkgdown::build_site()`
 - Use classes for your functions (S3 easiest system; S4, RC)
   - Under S3 your class probably needs `print`, `summary`, `print.summary` methods, defined as e.g. `print.mynewclass <- function(){...}`
