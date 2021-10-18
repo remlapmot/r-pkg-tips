@@ -50,6 +50,10 @@ knitr::opts_chunk$set(echo = FALSE)
     ✓ Adding '^\\.Rproj\\.user$' to '.Rbuildignore'
     ✓ Setting active project to '<no active project>'
     ```
+  - As seen in RStudio File pane
+    ```{r}
+    knitr::include_graphics("img/devtools-create.png")
+    ```
 - Refer to https://r-pkgs.org/ as much as you need to!
 - Define R package as an RStudio project (`.Rproj` file) to get the very helpful Build pane 
   - https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
