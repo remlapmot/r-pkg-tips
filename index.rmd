@@ -106,6 +106,7 @@ knitr::opts_chunk$set(echo = FALSE)
   - You must specify to `@export` functions you want exported from your package!
   - Remember to `@importFrom pkgname fn` the functions you have used from other packages in the roxygen code before your function
   - read https://r-pkgs.org/namespace.html many times!
+  - learn about environments http://adv-r.had.co.nz/Environments.html 
 - Use win-builder for a further check https://win-builder.r-project.org/
 - Use a visual git editor, e.g. GitHub desktop
   - Always work in a new branch, especially if working with others. Then merge into main/master when you're sure your changes are what you want
