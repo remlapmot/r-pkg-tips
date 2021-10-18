@@ -101,6 +101,11 @@ knitr::opts_chunk$set(echo = FALSE)
     }
     ```
   - Only use dots/periods in your function names if you are coding under the S3 class system
+- `NAMESPACE` 
+  - This file is written by devtools when you run `devtools::document()` on your correctly formatted helpfiles
+  - You must specify to `@export` functions you want exported from your package!
+  - Remember to `@importFrom pkgname fn` the functions you have used from other packages in the roxygen code before your function
+  - read https://r-pkgs.org/namespace.html many times!
 - Use win-builder for a further check https://win-builder.r-project.org/
 - Use a visual git editor, e.g. GitHub desktop
   - Always work in a new branch, especially if working with others. Then merge into main/master when you're sure your changes are what you want
