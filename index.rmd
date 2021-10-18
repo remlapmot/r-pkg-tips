@@ -21,6 +21,35 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <!-- `r Hmisc::hidingTOC(levels = 2)` -->
 
+- Create a new package by first installing `devtools` and then running
+    ```{r, eval=FALSE, echo=TRUE}
+    devtools::create()
+    ```
+
+  - This will generate
+    ```{r, eval=FALSE, echo=TRUE}
+    > devtools::create(path = ".")
+    ✓ Setting active project to '/Users/tom/Downloads/mynewpackage'
+    ✓ Creating 'R/'
+    ✓ Writing 'DESCRIPTION'
+    Package: mynewpackage
+    Title: What the Package Does (One Line, Title Case)
+    Version: 0.0.0.9000
+    Authors@R (parsed):
+        * First Last <first.last@example.com> [aut, cre] (YOUR-ORCID-ID)
+    Description: What the package does (one paragraph).
+    License: `use_mit_license()`, `use_gpl3_license()` or friends to
+        pick a license
+    Encoding: UTF-8
+    Roxygen: list(markdown = TRUE)
+    RoxygenNote: 7.1.2
+    ✓ Writing 'NAMESPACE'
+    ✓ Writing 'mynewpackage.Rproj'
+    ✓ Adding '^mynewpackage\\.Rproj$' to '.Rbuildignore'
+    ✓ Adding '.Rproj.user' to '.gitignore'
+    ✓ Adding '^\\.Rproj\\.user$' to '.Rbuildignore'
+    ✓ Setting active project to '<no active project>'
+    ```
 - Refer to https://r-pkgs.org/ as much as you need to!
 - Define R package as an RStudio project (`.Rproj` file) to get the very helpful Build pane 
   - https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
