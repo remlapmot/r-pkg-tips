@@ -119,6 +119,7 @@ knitr::opts_chunk$set(echo = FALSE)
     ```{r}
     knitr::include_graphics("img/environments.png")
     ```
+  - Every package has a package environment (the exported functions) and a namespace environment (both exported and internal functions)
 - Use win-builder for a further check https://win-builder.r-project.org/
 - To both win-builder and CRAN you will need to submit the source version of your package as a `.tar.gz` file, e.g. in RStudio or issue `R CMD build mynewpackage` at the command line  
     ```{r}
