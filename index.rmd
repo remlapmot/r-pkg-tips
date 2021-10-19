@@ -78,7 +78,7 @@ knitr::include_graphics("img/rstudio-mynewpackage.png")
   - https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
   - Key line in the `.Rproj` file is: `BuildType: Package` (`None`/`Package`/`Makefile`/`Website`/`Custom`) - Build pane appears for all but `None`
 
-### R and helpfiles
+### .R and helpfiles
 
 - `.R` files contain the functions your packge will provide
 - Don't code helpfiles (`.Rd` files) yourself 
