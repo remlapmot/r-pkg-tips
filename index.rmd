@@ -21,6 +21,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <!-- `r Hmisc::hidingTOC(levels = 2)` -->
 
+## {.tabset .tabset-pills} 
+
+### Create
+
 - Create a new package by first installing `devtools` and then running
     ```{r, eval=FALSE, echo=TRUE}
     devtools::create()
@@ -64,6 +68,9 @@ knitr::opts_chunk$set(echo = FALSE)
 - Define R package as an RStudio project (`.Rproj` file) to get the very helpful Build pane 
   - https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
   - `BuildType: Package` (`None`/`Package`/`Makefile`/`Website`/`Custom`) - Build pane appears for all but `None`
+
+### Checking  
+  
 - Use `R CMD check`/`devtools::check()`/Check button in RStudio Build pane
   - Aim for 0 errors, 0 warnings - this is the minimum requirement for CRAN
 
@@ -75,6 +82,9 @@ knitr::opts_chunk$set(echo = FALSE)
     - `usethis::use_github_action()`/`usethis::use_tidy_github_actions()` or copy from https://github.com/r-lib/actions
   - Stata and python have no such similarly thorough checking system, so well worth using
   - If your package passes `R CMD check` then you can build a pkgdown website for your package with one command `pkgdown::build_site()`
+
+### Classes  
+  
 - Use classes for your functions (S3 easiest system; S4, RC)
   - Under S3 your class probably needs `print`, `summary`, `print.summary` methods, defined as e.g. 
     ```{r, eval=FALSE, echo=TRUE}
@@ -109,6 +119,9 @@ knitr::opts_chunk$set(echo = FALSE)
     }
     ```
   - Only use dots/periods in your function names if you are coding under the S3 class system
+  
+### NAMESPACE
+  
 - `NAMESPACE` 
   - This file is written by devtools when you run `devtools::document()` on your correctly formatted helpfiles
   - You must specify to `@export` functions you want exported from your package!
@@ -128,6 +141,9 @@ knitr::opts_chunk$set(echo = FALSE)
     ```{r}
     knitr::include_graphics("img/save-as-source-package-output.png")
     ```
+
+### Git and GitHub
+
 - Use a visual git editor, e.g. GitHub desktop
   - Always work in a new branch, especially if working with others. Then merge into main/master when you're sure your changes are what you want
   - Make changes then work through changes - selecting relevant changed lines - giving sensible commit messages, i.e. not just one massive commit with message "Edits"!  
@@ -141,3 +157,6 @@ knitr::opts_chunk$set(echo = FALSE)
 - Your repo can contain much more than just your R package
   - Usually will contain the static website for the package (made with pkgdown) and then hosted using GitHub Pages
   - Remember to exclude the files/folders not the package by adding them to the `.Rbuildignore` file
+
+## {-}
+
