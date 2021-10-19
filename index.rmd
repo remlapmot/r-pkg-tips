@@ -195,4 +195,19 @@ knitr::include_graphics("img/github-desktop-select-lines.png")
   - Usually will contain the static website for the package (made with pkgdown) and then hosted using GitHub Pages
   - Remember to exclude the files/folders not the package by adding them to the `.Rbuildignore` file
 
+### System dependencies
+
+- R packages are not totally self-contained
+- Building a package from source that requires system dependencies will require that you install those dependencies on your computer first
+- Windows: RTools4 provides the `pacman` system
+  - See [here](https://cran.r-project.org/bin/windows/Rtools/) and [here](https://github.com/r-windows/docs/blob/master/rtools40.md#system-libraries-and-pacman)
+- macOS: 
+  - Install Command Line Tools, issue in the Terminal app
+    ```
+    xcode-select --install
+    ```
+  - most dependencies are available using [Homebrew](https://brew.sh/)
+- Linux
+  - Use the package manager with your distro
+
 ## {-}
