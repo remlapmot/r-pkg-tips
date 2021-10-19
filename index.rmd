@@ -60,6 +60,7 @@ knitr::opts_chunk$set(echo = FALSE)
     ```
   - Initialise the folder as a Git repo
 - Refer to https://r-pkgs.org/ as much as you need to!
+- Another excellent guide is https://kbroman.org/pkg_primer/
 - Define R package as an RStudio project (`.Rproj` file) to get the very helpful Build pane 
   - https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
   - `BuildType: Package` (`None`/`Package`/`Makefile`/`Website`/`Custom`) - Build pane appears for all but `None`
