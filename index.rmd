@@ -67,7 +67,7 @@ knitr::opts_chunk$set(echo = FALSE)
   - Aim for 0 errors, 0 warnings - this is the minimum requirement for CRAN
 
     ```{r}
-    knitr::include_graphics('img/r-cmd-chck-build-pane.png')
+    knitr::include_graphics('img/r-cmd-check-output.png')
     ```
 
   - You can even setup a GitHub Action to run this on every commit into repo
