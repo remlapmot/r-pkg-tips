@@ -83,7 +83,6 @@ knitr::include_graphics("img/rstudio-mynewpackage.png")
 - `.R` files contain the functions your packge will provide
 - Don't code helpfiles (`.Rd` files in the `man` folder) yourself 
 - use Roxygen syntax through the [roxygen2 package](https://github.com/r-lib/roxygen2)
-- Add the following line to your `DESCRIPTION` file
   - Roxygen syntax lines begin `#' `
 - To additionally use markdown syntax within roxygen syntax add the following line to your `DESCRIPTION` file
 ```
