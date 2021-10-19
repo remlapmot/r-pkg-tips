@@ -73,6 +73,40 @@ knitr::include_graphics("img/rstudio-mynewpackage.png")
   - https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
   - Key line in the `.Rproj` file is: `BuildType: Package` (`None`/`Package`/`Makefile`/`Website`/`Custom`) - Build pane appears for all but `None`
 
+### R and helpfiles
+
+- `.R` files contain the functions your packge will provide
+- Don't code helpfiles (`.Rd` files) yourself 
+- use Roxygen syntax through the [roxygen2 package](https://github.com/r-lib/roxygen2)
+- Add the following line to your `DESCRIPTION` file
+```
+Roxygen: list(markdown = TRUE)
+```
+- Your `.R` files will look something like
+```{r, eval=FALSE, echo=TRUE}
+#' The length of a string
+#'
+#' Technically this returns the number of "code points", in a string. One
+#' code point usually corresponds to one character, but not always. For example,
+#' an u with a umlaut might be represented as a single character or as the
+#' combination a u and an umlaut.
+#'
+#' @inheritParams str_detect
+#' @return A numeric vector giving number of characters (code points) in each
+#'    element of the character vector. Missing string have missing length.
+#' @seealso [stringi::stri_length()] which this function wraps.
+#' @export
+#' @examples
+#' str_length(letters)
+#' str_length(NA)
+#' str_length(factor("abc"))
+#' str_length(c("i", "like", "programming", NA))
+str_length <- function(string) {
+  ...
+}
+```
+- Running `devtools::document()` will generate your `.Rd` files 
+
 ### Classes  
   
 - Use classes for your functions (S3 easiest system; S4, RC)
@@ -109,7 +143,7 @@ print.summary.mynewclass <- function(x, digits = max(3, getOption("digits") - 3)
 }
 ```
 - Only use dots/periods in your function names if you are coding under the S3 class system
-  
+
 ### NAMESPACE
   
 - The `NAMESPACE` file is written by devtools when you run `devtools::document()` on your correctly formatted helpfiles
