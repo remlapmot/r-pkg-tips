@@ -21,7 +21,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <!-- `r Hmisc::hidingTOC(levels = 2)` -->
 
-## {.tabset .tabset-pills} 
+## Introduction
+
+The following is intended as a set of tips for people coding or about to code an R package.
+
+## Tips {.tabset .tabset-pills} 
 
 ### Create
 
