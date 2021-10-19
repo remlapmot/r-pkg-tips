@@ -142,10 +142,10 @@ knitr::include_graphics("img/save-as-source-package-output.png")
 
 ### Git and GitHub
 
-- Use a visual git editor, e.g. GitHub desktop
-- Always work in a new branch, especially if working with others. Then merge into main/master when you're sure your changes are what you want
-- Make changes then work through changes 
-  - Select relevant changed lines 
+- Use a visual git editor, e.g. [GitHub Desktop](https://desktop.github.com/)
+- Work in a new branch, especially if working with others. Then merge into main/master when you're sure your changes are what you want
+- Make changes 
+  - Then select relevant changed lines 
   - Use sensible commit messages, i.e. not just one massive commit with message "Edits"!  
 ```{r}
 knitr::include_graphics("img/github-desktop-select-lines.png")
