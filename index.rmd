@@ -151,8 +151,7 @@ knitr::include_graphics("img/save-as-source-package-output.png")
 knitr::include_graphics("img/github-desktop-select-lines.png")
 ```  
   
-- I prefer not to keep my git repositories in a folder that is also synchronized with OneDrive/Google Drive, e.g. when you render an R Markdown file the OneDrive sync of all the auxilliary files that are created can be very annoying
-- Think about including tests with testthat or another testing package
+- I prefer not to keep my git repositories in a folder which is also synchronized with OneDrive/Google Drive, e.g. when you render an R Markdown file the syncing of all the auxilliary files that are created can be very annoying
 - When contributing to a new package run `devtools::install_dev_deps()` to install all packages under Depends, Imports, and Suggests in its `DESCRIPTION` file
 - Your repo can contain much more than just your R package
   - Usually will contain the static website for the package (made with pkgdown) and then hosted using GitHub Pages
