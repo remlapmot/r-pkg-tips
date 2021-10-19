@@ -81,13 +81,15 @@ knitr::include_graphics("img/rstudio-mynewpackage.png")
 ### .R and helpfiles
 
 - `.R` files contain the functions your packge will provide
-- Don't code helpfiles (`.Rd` files) yourself 
+- Don't code helpfiles (`.Rd` files in the `man` folder) yourself 
 - use Roxygen syntax through the [roxygen2 package](https://github.com/r-lib/roxygen2)
 - Add the following line to your `DESCRIPTION` file
+  - Roxygen syntax lines begin `#' `
+- To additionally use markdown syntax within roxygen syntax add the following line to your `DESCRIPTION` file
 ```
 Roxygen: list(markdown = TRUE)
 ```
-- Your `.R` files will look something like
+- Your `.R` files will look something like the following, i.e., roxygen code for the helpfile for a function before the actual R code of the function
 ```{r, eval=FALSE, echo=TRUE}
 #' The length of a string
 #'
@@ -110,7 +112,7 @@ str_length <- function(string) {
   ...
 }
 ```
-- Running `devtools::document()` will generate your `.Rd` files 
+- Running `devtools::document()` will generate your `.Rd` files from your `.R` files
 
 ### Classes  
   
