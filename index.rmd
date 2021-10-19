@@ -69,20 +69,6 @@ knitr::opts_chunk$set(echo = FALSE)
   - https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
   - `BuildType: Package` (`None`/`Package`/`Makefile`/`Website`/`Custom`) - Build pane appears for all but `None`
 
-### Checking  
-  
-- Use `R CMD check`/`devtools::check()`/Check button in RStudio Build pane
-  - Aim for 0 errors, 0 warnings - this is the minimum requirement for CRAN
-
-    ```{r}
-    knitr::include_graphics('img/r-cmd-check-output.png')
-    ```
-
-  - You can even setup a GitHub Action to run this on every commit into repo
-    - `usethis::use_github_action()`/`usethis::use_tidy_github_actions()` or copy from https://github.com/r-lib/actions
-  - Stata and python have no such similarly thorough checking system, so well worth using
-  - If your package passes `R CMD check` then you can build a pkgdown website for your package with one command `pkgdown::build_site()`
-
 ### Classes  
   
 - Use classes for your functions (S3 easiest system; S4, RC)
@@ -141,6 +127,20 @@ knitr::opts_chunk$set(echo = FALSE)
     ```{r}
     knitr::include_graphics("img/save-as-source-package-output.png")
     ```
+
+### Checking  
+  
+- Use `R CMD check`/`devtools::check()`/Check button in RStudio Build pane
+  - Aim for 0 errors, 0 warnings - this is the minimum requirement for CRAN
+
+    ```{r}
+    knitr::include_graphics('img/r-cmd-check-output.png')
+    ```
+
+  - You can even setup a GitHub Action to run this on every commit into repo
+    - `usethis::use_github_action()`/`usethis::use_tidy_github_actions()` or copy from https://github.com/r-lib/actions
+  - Stata and python have no such similarly thorough checking system, so well worth using
+  - If your package passes `R CMD check` then you can build a pkgdown website for your package with one command `pkgdown::build_site()`
 
 ### Git and GitHub
 
