@@ -126,8 +126,8 @@ knitr::opts_chunk$set(echo = FALSE)
   - This file is written by devtools when you run `devtools::document()` on your correctly formatted helpfiles
   - You must specify to `@export` functions you want exported from your package!
   - Remember to `@importFrom pkgname fn` the functions you have used from other packages in the roxygen code before your function
-  - read https://r-pkgs.org/namespace.html many times!
-  - learn about environments http://adv-r.had.co.nz/Environments.html
+  - Read https://r-pkgs.org/namespace.html many times!
+  - Learn about environments http://adv-r.had.co.nz/Environments.html
   - Remember what happens when we load a package - an environment of its objects are placed at the top of R's search path (figure from [here](https://adv-r.hadley.nz/environments.html#special-environments))  
     ```{r}
     knitr::include_graphics("img/environments.png")
