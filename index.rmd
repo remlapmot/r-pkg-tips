@@ -78,23 +78,30 @@ knitr::opts_chunk$set(echo = FALSE)
   - Under S3 your class probably needs `print`, `summary`, `print.summary` methods, defined as e.g. 
     ```{r, eval=FALSE, echo=TRUE}
     # A function defines a new S3 class
+    #' @export
     myfun <- function() {
       ...
       class(output) <- "mynewclass"
       output
     }
     
+    # print method for objects of class mynewclass
+    #' @export
     print.mynewclass <- function(x, digits = max(3, getOption("digits") - 3), ...){
       ...
       invisible(x)
     }
     
+    # summary method for objects of class mynewclass
+    #' @export
     summary.mynewclass <- function(){
       ...
       class(output) <- "summary.mynewclass"
       output
     }
     
+    # print method for objects of class summary.mynewclass
+    #' @export
     print.summary.mynewclass <- function(x, digits = max(3, getOption("digits") - 3),...){
       ...
       invisible(x)  
