@@ -188,18 +188,19 @@ knitr::include_graphics("img/save-as-source-package-output.png")
 ### Git and GitHub
 
 - Use a visual git editor, e.g. [GitHub Desktop](https://desktop.github.com/)
-- Work in a new branch, especially if working with others. Then merge into main/master when you're sure your changes are what you want
-- Make changes 
+- Work in a new branch, especially if working with others
+  - Then merge into main/master when you're sure your changes are what you want
+- When coding, I recommend making your changes 
   - Then select relevant changed lines 
-  - Use sensible commit messages, i.e. not just one massive commit with message "Edits"!  
+  - Use sensible commit messages, i.e., do not make one massive commit with commit message "Edits"!  
 ```{r}
 knitr::include_graphics("img/github-desktop-select-lines.png")
 ```  
   
-- I prefer not to keep my git repositories in a folder which is also synchronized with OneDrive/Google Drive, e.g. when you render an R Markdown file the syncing of all the auxilliary files that are created can be very annoying
-- When contributing to a new package run `devtools::install_dev_deps()` to install all packages under Depends, Imports, and Suggests in its `DESCRIPTION` file
+- I prefer not to keep my git repositories in a folder which is also synchronized with OneDrive/Google Drive, e.g., when you render an R Markdown file the syncing of all the auxiliary files that are created can be very annoying
+- When contributing to a new package, after forking on GitHub, then cloning to your local machine, and opening in RStudio/setting working directory to top level of package run `devtools::install_dev_deps()` to install all packages under Depends, Imports, and Suggests in its `DESCRIPTION` file
 - Your repo can contain much more than just your R package
-  - Usually will contain the static website for the package (made with pkgdown) and then hosted using GitHub Pages
+  - It will often additionally contain the static website for the package (made with pkgdown) which can be hosted for free using GitHub Pages/Netlify
   - Remember to exclude the files/folders not the package by adding them to the `.Rbuildignore` file
 
 ### System dependencies
