@@ -149,7 +149,7 @@ print.summary.mynewclass <- function(x, digits = max(3, getOption("digits") - 3)
   invisible(x)  
 }
 ```
-- Only use dots/periods in your function names if you are coding under the S3 class system
+- I recommend only using dots/periods in your function names if you are coding under the S3 class system
 
 ### NAMESPACE
   
@@ -174,7 +174,7 @@ knitr::include_graphics("img/namespaces-and-environments.png")
 knitr::include_graphics('img/r-cmd-check-output.png')
 ```
 
-- You can even setup a GitHub Action to run this on every commit into repo
+- You can setup a GitHub Action to run this on every commit into repo
 - `usethis::use_github_action()`/`usethis::use_tidy_github_actions()` or copy from https://github.com/r-lib/actions
 - Stata and python have no such similarly thorough checking system, so well worth using
 - Think about including tests with [testthat](https://testthat.r-lib.org/) or another testing package
