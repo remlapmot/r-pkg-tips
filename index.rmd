@@ -120,10 +120,6 @@ knitr::include_graphics("img/environments.png")
 ```{r}
 knitr::include_graphics("img/namespaces-and-environments.png")
 ```
-- For both win-builder and CRAN you will need to submit the source version of your package as a `.tar.gz` file, e.g. in RStudio or issue `R CMD build mynewpackage` at the command line  
-```{r}
-knitr::include_graphics("img/save-as-source-package-output.png")
-```
 
 ### Checking  
   
@@ -138,6 +134,11 @@ knitr::include_graphics('img/r-cmd-check-output.png')
 - Stata and python have no such similarly thorough checking system, so well worth using
 - Think about including tests with [testthat](https://testthat.r-lib.org/) or another testing package
 - If your package passes `R CMD check` then you can build a pkgdown website for your package with one command `pkgdown::build_site()`
+- Use win-builder for a further check https://win-builder.r-project.org/
+- For both win-builder and CRAN you will need to submit the source version of your package as a `.tar.gz` file, e.g. in RStudio or issue `R CMD build mynewpackage` at the command line  
+```{r}
+knitr::include_graphics("img/save-as-source-package-output.png")
+```
 
 ### Git and GitHub
 
