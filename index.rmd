@@ -119,6 +119,7 @@ str_length <- function(string) {
 - Under S3 your class probably needs `print`, `summary`, `print.summary` methods, defined as e.g. 
 ```{r, eval=FALSE, echo=TRUE}
 # A function defines a new S3 class
+# This function shouldn't really print anything to the R console when run
 #' @export
 myfun <- function(...){
   ...
