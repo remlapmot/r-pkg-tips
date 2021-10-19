@@ -76,7 +76,7 @@ knitr::include_graphics("img/rstudio-mynewpackage.png")
 ```{r, eval=FALSE, echo=TRUE}
 # A function defines a new S3 class
 #' @export
-myfun <- function() {
+myfun <- function(...){
   ...
   class(output) <- "mynewclass"
   output
@@ -91,7 +91,7 @@ print.mynewclass <- function(x, digits = max(3, getOption("digits") - 3), ...){
 
 # summary method for objects of class mynewclass
 #' @export
-summary.mynewclass <- function(){
+summary.mynewclass <- function(...){
   ...
   class(output) <- "summary.mynewclass"
   output
