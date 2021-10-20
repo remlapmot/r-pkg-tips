@@ -69,14 +69,14 @@ RoxygenNote: 7.1.2
 ```{r}
 knitr::include_graphics("img/devtools-create.png")
 ```
-- Double click the `.Rproj` file to open in RStudio as an RStudio project
+- Double click the `.Rproj` file to open in RStudio as an RStudio project - this gives you the very helpful Build pane
 ```{r}
 knitr::include_graphics("img/rstudio-mynewpackage.png")
 ```
-- Initialise the folder as a Git repo: `usethis::use_git()`
 - If you are working on an existing package define folder/repo as an RStudio project (`.Rproj` file) to get the very helpful Build pane 
   - https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
   - Key line in the `.Rproj` file is: `BuildType: Package` (`None`/`Package`/`Makefile`/`Website`/`Custom`) - Build pane appears for all but `None`
+- Initialise the folder as a Git repo: `usethis::use_git()`
 - Now edit/complete the obvious fields in the `DESCRIPTION` file
 - Not all of these files will be put into our package, e.g., when we build the source package at the moment only the `DESCRIPTION` and `NAMESPACE` files are included (as our `R` and `man` directories are empty)  
 ```{r}
