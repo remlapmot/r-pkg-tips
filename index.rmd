@@ -190,6 +190,7 @@ knitr::include_graphics('img/r-cmd-check-output.png')
 - If your package passes `R CMD check` then you can build a pkgdown website for your package with one command `pkgdown::build_site()`
 - Use win-builder for a further check https://win-builder.r-project.org/
 - For both win-builder and CRAN you will need to submit the source version of your package as a `.tar.gz` file, e.g. in RStudio or issue `R CMD build mynewpackage` at the command line  
+  - Note the `.tar.gz` file is what `remotes::install_github()` makes then installs if installing from GitHub  
 ```{r}
 knitr::include_graphics("img/save-as-source-package-output.png")
 ```
