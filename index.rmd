@@ -214,9 +214,11 @@ knitr::include_graphics("img/github-desktop-select-lines.png")
 
 ### System dependencies
 
-- R packages are not totally self-contained
-- Building a package from source that requires system dependencies will require that you install those dependencies on your computer first, e.g. you may see installation failures such as  
+- Source R packages are not totally self-contained if external C libraries (or similar) are required to build it as they are not included in the `.tar.gz` file
+- To install such a package either download the binary package from CRAN (binary packages for Windows take about 1 day longer to appear after the new source version appears)/RSPM/package manager
+- Or, install the required system dependencies on your computer first, e.g. you may see installation failures such as  
 ```
+> install.packages("openssl", type = "source")
 * installing *source* package 'openssl' ...
 ** package 'openssl' successfully unpacked and MD5 sums checked
 Using PKG_CFLAGS=
