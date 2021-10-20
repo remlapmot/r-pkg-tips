@@ -242,6 +242,7 @@ R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
 ERROR: configuration failed for package 'openssl'
 * removing '/usr/local/lib/R/site-library/openssl'
 ```
+- Check if a package name is mentioned in the error message. To install it use the following tools for your operating system  
 - Windows: 
   - Install [RTools4](https://cran.r-project.org/bin/windows/Rtools/), this provides the [`pacman`](https://github.com/r-windows/docs/blob/master/rtools40.md#system-libraries-and-pacman) system
 - macOS: 
