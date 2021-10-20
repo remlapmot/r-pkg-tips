@@ -133,6 +133,8 @@ str_length <- function(string) {
 myfun <- function(...){
   ...
   class(output) <- "mynewclass"
+  # alternatively given objects can have multiple classes, append your new class
+  # class(output) <- append("mynewclass", class(output))
   output
 }
 
