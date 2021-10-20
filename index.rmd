@@ -32,7 +32,7 @@ Extensive guides to writing an R package are given
 
 these tips are meant to supplement them.
 
-## Tips {.tabset .tabset-pills} 
+## Tips {.tabset .tabset-pills .tabset-fade} 
 
 ### Create
 
