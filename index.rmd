@@ -212,6 +212,7 @@ knitr::include_graphics("img/github-desktop-select-lines.png")
 - Your repo can contain much more than just your R package
   - It will often additionally contain the static website for the package (made with pkgdown) which can be hosted for free using GitHub Pages/Netlify
   - Remember to exclude the files/folders not the package by adding them to the `.Rbuildignore` file
+- Some people don't like others distributing packages through a GitHub repo, because `install_github()` looks for a change in the hash of the latest commit - but that may have been in a file not included in the source package
 
 ### System dependencies
 
