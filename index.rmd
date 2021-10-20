@@ -218,6 +218,10 @@ knitr::include_graphics("img/github-desktop-select-lines.png")
 
 - Source R packages are not totally self-contained if external C libraries (or similar) are required to build it as they are not included in the `.tar.gz` file
 - To install such a package either download the binary package from CRAN (binary packages for Windows take about 1 day longer to appear after the new source version appears)/RSPM/package manager
+  - If you never want this problem always click "No" on this window  
+    ```{r}
+    knitr::include_graphics("img/do-you-want-to-install-from-sources.png")
+    ```
 - Or, install the required system dependencies on your computer first, e.g. you may see installation failures such as  
 ```
 > install.packages("openssl", type = "source")
