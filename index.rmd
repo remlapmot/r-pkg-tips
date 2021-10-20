@@ -65,7 +65,7 @@ RoxygenNote: 7.1.2
 ✓ Adding '^\\.Rproj\\.user$' to '.Rbuildignore'
 ✓ Setting active project to '<no active project>'
 ```
-- As seen in RStudio File pane
+- As seen in RStudio File pane (nb. even though there is a `.gitignore` file this folder is not initialised as a git repo yet - look for `.git` folder)
 ```{r}
 knitr::include_graphics("img/devtools-create.png")
 ```
