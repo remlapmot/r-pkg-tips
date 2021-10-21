@@ -32,6 +32,10 @@ Extensive guides to writing an R package are given
 
 these tips are meant to supplement them.
 
+Also look at the source code of your favourite R packages on GitHub
+
+- https://github.com/rstudio/rmarkdown
+
 ## Tips {.tabset .tabset-pills .tabset-fade} 
 
 ### Create
