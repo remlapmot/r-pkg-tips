@@ -87,6 +87,26 @@ knitr::include_graphics("img/build-source-pkg-mynewpackage.png")
 knitr::include_graphics("img/source-contents-mynewpackage.png")
 ```
 
+### States
+
+- Confusingly R packages can be in different states  
+```{r}
+knitr::include_graphics("img/cran-downloads-example.png")
+```
+- Files change location depending upon state - see [here](https://r-pkgs.org/package-structure-state.html#bundled-package)
+- Source - the files you code - what's in your new folder / GitHub repo
+- (Source) bundled - the `.tar.gz` file of your source files excluding those in `.Rbuildignore` - what you need to submit to CRAN
+- Binary - the 'compiled' version of the bundled package compressed (`.zip` on Windows)
+  - `/R` no longer contains `.R` files, 3 files that store the parsed functions in an efficient file format - result of loading all the R code nd then saving the functions with `save()`
+  - the helpfiles converted from `.Rd` to `.html`
+  - Vignettes compiled to `.html`
+  - any C code etc. will have been compiled
+    ```{r}
+    knitr::include_graphics("img/aer-binary-r-folder.png")
+    ```
+- Installed - the uncompressed zip file in the correct library folder
+- In memory - the binary, installed package loaded via `library()`
+
 ### .R and helpfiles
 
 - `.R` files contain the functions your packge will provide
