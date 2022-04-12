@@ -1,4 +1,8 @@
 # Checking  
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
   
 - Use `R CMD check`/`devtools::check()`/Check button in RStudio Build pane
 - Aim for 0 errors and 0 warnings - this is the minimum requirement for CRAN  

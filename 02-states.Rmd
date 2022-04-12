@@ -1,5 +1,9 @@
 # States
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
 - Confusingly R packages can be in different states  
 ```{r}
 knitr::include_graphics("img/cran-downloads-example.png")

@@ -1,5 +1,9 @@
 # .R and helpfiles
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
 - `.R` files contain the functions your packge will provide
 - Don't code helpfiles (`.Rd` files in the `man` folder) yourself 
 - Use Roxygen syntax through the [roxygen2 package](https://github.com/r-lib/roxygen2)

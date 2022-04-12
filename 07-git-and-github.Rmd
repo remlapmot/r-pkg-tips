@@ -1,6 +1,10 @@
 # Git and GitHub
 
 - Use a visual git editor, e.g. [GitHub Desktop](https://desktop.github.com/)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
 - Work in a new branch, especially if working with others
   - Then merge into main/master when you're sure your changes are what you want
 - When coding, I recommend making your changes 

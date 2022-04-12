@@ -1,5 +1,9 @@
 # Create
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
 - Create a new package by first installing `devtools` and then running
 ```{r, eval=FALSE, echo=TRUE}
 devtools::create()

@@ -1,4 +1,8 @@
 # NAMESPACE
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
   
 - The `NAMESPACE` file is written by devtools when you run `devtools::document()` on your correctly formatted helpfiles
 - You must specify to `@export` functions you want exported from your package!

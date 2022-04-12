@@ -1,4 +1,8 @@
 # Classes  
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
   
 - Use classes for your functions (S3 easiest system; S4, RC)
 - Under S3 your class probably needs `print`, `summary`, `print.summary` methods, defined as e.g. 
