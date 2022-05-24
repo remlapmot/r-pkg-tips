@@ -1,7 +1,7 @@
 ---
 title: "Tips for coding R packages"
 author: "Tom Palmer"
-date: "12 April 2022"
+date: "Last built on 24 May 2022"
 site: bookdown::bookdown_site
 ---
 
