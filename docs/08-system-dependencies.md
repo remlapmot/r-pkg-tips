@@ -28,7 +28,7 @@ ERROR: configuration failed for package 'openssl'
 ```
 - Check if a package name is mentioned in the error message. To install it use the following tools for your operating system  
 - Windows: 
-  - Install [RTools4](https://cran.r-project.org/bin/windows/Rtools/), this provides the [`pacman`](https://github.com/r-windows/docs/blob/master/rtools40.md#system-libraries-and-pacman) system
+  - Install [RTools42](https://cran.r-project.org/bin/windows/Rtools/), this provides the [`pacman`](https://github.com/r-windows/docs/blob/master/rtools40.md#system-libraries-and-pacman) system
 - macOS: 
   - Install Command Line Tools, issue in the Terminal app
     ```
@@ -39,7 +39,7 @@ ERROR: configuration failed for package 'openssl'
     brew install ...
     ```
 - Linux
-  - Use the package manager with your distro, e.g.
+  - Use the package manager with your distro, e.g. on Ubuntu
     ```
     sudo apt-get install ...
     ```

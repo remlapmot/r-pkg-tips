@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Create | Tips for coding R packages</title>
   <meta name="description" content="Create | Tips for coding R packages" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Create | Tips for coding R packages" />
   <meta property="og:type" content="book" />
@@ -167,33 +167,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="create" class="section level1 hasAnchor">
 <h1>Create<a href="create.html#create" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ul>
-<li>Create a new package by first installing <code>devtools</code> and then running</li>
+<li>Create a new package by first installing <strong>devtools</strong> and then running</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="create.html#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">create</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="create.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb1-2"><a href="create.html#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">create</span>(<span class="st">&quot;mynewpackage&quot;</span>)</span></code></pre></div>
 <ul>
 <li>This will generate</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="create.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> devtools<span class="sc">::</span><span class="fu">create</span>(<span class="at">path =</span> <span class="st">&quot;.&quot;</span>)</span>
-<span id="cb2-2"><a href="create.html#cb2-2" aria-hidden="true" tabindex="-1"></a>✓ Setting active project to <span class="st">&#39;/Users/tom/Downloads/mynewpackage&#39;</span></span>
-<span id="cb2-3"><a href="create.html#cb2-3" aria-hidden="true" tabindex="-1"></a>✓ Creating <span class="st">&#39;R/&#39;</span></span>
-<span id="cb2-4"><a href="create.html#cb2-4" aria-hidden="true" tabindex="-1"></a>✓ Writing <span class="st">&#39;DESCRIPTION&#39;</span></span>
-<span id="cb2-5"><a href="create.html#cb2-5" aria-hidden="true" tabindex="-1"></a>Package<span class="sc">:</span> mynewpackage</span>
-<span id="cb2-6"><a href="create.html#cb2-6" aria-hidden="true" tabindex="-1"></a>Title<span class="sc">:</span> What the Package <span class="fu">Does</span> (One Line, Title Case)</span>
-<span id="cb2-7"><a href="create.html#cb2-7" aria-hidden="true" tabindex="-1"></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="dv">0</span>.<span class="fl">0.9000</span></span>
-<span id="cb2-8"><a href="create.html#cb2-8" aria-hidden="true" tabindex="-1"></a>Authors<span class="sc">@</span><span class="fu">R</span> (parsed)<span class="sc">:</span></span>
-<span id="cb2-9"><a href="create.html#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="er">*</span> First Last <span class="sc">&lt;</span>first.last<span class="sc">@</span>example.com<span class="sc">&gt;</span> [aut, cre] OUR<span class="sc">-</span>ORCID<span class="sc">-</span>ID<span class="er">)</span></span>
-<span id="cb2-10"><a href="create.html#cb2-10" aria-hidden="true" tabindex="-1"></a>Description<span class="sc">:</span> What the package <span class="fu">does</span> (one paragraph).</span>
-<span id="cb2-11"><a href="create.html#cb2-11" aria-hidden="true" tabindex="-1"></a>License<span class="sc">:</span> <span class="st">`</span><span class="at">use_mit_license()</span><span class="st">`</span>, <span class="st">`</span><span class="at">use_gpl3_license()</span><span class="st">`</span> or friends to</span>
-<span id="cb2-12"><a href="create.html#cb2-12" aria-hidden="true" tabindex="-1"></a>    pick a license</span>
-<span id="cb2-13"><a href="create.html#cb2-13" aria-hidden="true" tabindex="-1"></a>Encoding<span class="sc">:</span> UTF<span class="dv">-8</span></span>
-<span id="cb2-14"><a href="create.html#cb2-14" aria-hidden="true" tabindex="-1"></a>Roxygen<span class="sc">:</span> <span class="fu">list</span>(<span class="at">markdown =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-15"><a href="create.html#cb2-15" aria-hidden="true" tabindex="-1"></a>RoxygenNote<span class="sc">:</span> <span class="dv">7</span>.<span class="fl">1.2</span></span>
-<span id="cb2-16"><a href="create.html#cb2-16" aria-hidden="true" tabindex="-1"></a>✓ Writing <span class="st">&#39;NAMESPACE&#39;</span></span>
-<span id="cb2-17"><a href="create.html#cb2-17" aria-hidden="true" tabindex="-1"></a>✓ Writing <span class="st">&#39;mynewpackage.Rproj&#39;</span></span>
-<span id="cb2-18"><a href="create.html#cb2-18" aria-hidden="true" tabindex="-1"></a>✓ Adding <span class="st">&#39;^mynewpackage</span><span class="sc">\\</span><span class="st">.Rproj$&#39;</span> to <span class="st">&#39;.Rbuildignore&#39;</span></span>
-<span id="cb2-19"><a href="create.html#cb2-19" aria-hidden="true" tabindex="-1"></a>✓ Adding <span class="st">&#39;.Rproj.user&#39;</span> to <span class="st">&#39;.gitignore&#39;</span></span>
-<span id="cb2-20"><a href="create.html#cb2-20" aria-hidden="true" tabindex="-1"></a>✓ Adding <span class="st">&#39;^</span><span class="sc">\\</span><span class="st">.Rproj</span><span class="sc">\\</span><span class="st">.user$&#39;</span> to <span class="st">&#39;.Rbuildignore&#39;</span></span>
-<span id="cb2-21"><a href="create.html#cb2-21" aria-hidden="true" tabindex="-1"></a>✓ Setting active project to <span class="st">&#39;&lt;no active project&gt;&#39;</span></span></code></pre></div>
+<pre><code>✔ Setting active project to &#39;/Users/tom/Documents/GitHub/r-pkg-tips/mynewpackage&#39;
+✔ Creating &#39;R/&#39;
+✔ Writing &#39;DESCRIPTION&#39;Package: mynewpackage
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R (parsed):
+    * First Last &lt;first.last@example.com&gt; [aut, cre] (YOUR-ORCID-ID)
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0
+✔ Writing &#39;NAMESPACE&#39;
+✔ Writing &#39;mynewpackage.Rproj&#39;
+✔ Adding &#39;^mynewpackage\\.Rproj$&#39; to &#39;.Rbuildignore&#39;
+✔ Adding &#39;.Rproj.user&#39; to &#39;.gitignore&#39;
+✔ Adding &#39;^\\.Rproj\\.user$&#39; to &#39;.Rbuildignore&#39;
+✔ Setting active project to &#39;&lt;no active project&gt;&#39;</code></pre>
 <ul>
 <li>As seen in RStudio File pane (nb. even though there is a <code>.gitignore</code> file this folder is not initialised as a git repo yet - look for <code>.git</code> folder)<br />
 <img src="img/devtools-create.png" width="693" /></li>

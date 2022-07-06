@@ -2,36 +2,34 @@
 
 
 
-- Create a new package by first installing `devtools` and then running
+- Create a new package by first installing **devtools** and then running
 
 ```r
-devtools::create()
+install.packages("devtools")
+devtools::create("mynewpackage")
 ```
 
 - This will generate
-
-```r
-> devtools::create(path = ".")
-✓ Setting active project to '/Users/tom/Downloads/mynewpackage'
-✓ Creating 'R/'
-✓ Writing 'DESCRIPTION'
-Package: mynewpackage
+```
+✔ Setting active project to '/Users/tom/Documents/GitHub/r-pkg-tips/mynewpackage'
+✔ Creating 'R/'
+✔ Writing 'DESCRIPTION'Package: mynewpackage
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R (parsed):
-    * First Last <first.last@example.com> [aut, cre] OUR-ORCID-ID)
+    * First Last <first.last@example.com> [aut, cre] (YOUR-ORCID-ID)
 Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
-✓ Writing 'NAMESPACE'
-✓ Writing 'mynewpackage.Rproj'
-✓ Adding '^mynewpackage\\.Rproj$' to '.Rbuildignore'
-✓ Adding '.Rproj.user' to '.gitignore'
-✓ Adding '^\\.Rproj\\.user$' to '.Rbuildignore'
-✓ Setting active project to '<no active project>'
+RoxygenNote: 7.2.0
+✔ Writing 'NAMESPACE'
+✔ Writing 'mynewpackage.Rproj'
+✔ Adding '^mynewpackage\\.Rproj$' to '.Rbuildignore'
+✔ Adding '.Rproj.user' to '.gitignore'
+✔ Adding '^\\.Rproj\\.user$' to '.Rbuildignore'
+✔ Setting active project to '<no active project>'
 ```
 - As seen in RStudio File pane (nb. even though there is a `.gitignore` file this folder is not initialised as a git repo yet - look for `.git` folder)  
 <img src="img/devtools-create.png" width="693" />
