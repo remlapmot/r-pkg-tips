@@ -8,5 +8,29 @@ To build the website either
 - or, run in R
 
     ```r
-    rmarkdown::render_site(encoding = 'UTF-8')
+    # install.packages('quarto')
+    quarto::quarto_render()
+    ```
+
+Or at the command line
+
+    ```bash
+    quarto render
+    ```
+
+When editing the project preview with
+
+    ```r
+    quarto::quarto_preview()
+    ```
+
+or 
+
+    ```bash
+    quarto preview
+    ```
+And stop the process with <kbd>Ctrl</kbd>+<kbd>C</kbd> or with
+
+    ```r
+    quarto::quarto_preview_stop()
     ```
