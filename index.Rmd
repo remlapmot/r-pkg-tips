@@ -7,7 +7,7 @@ date: "Last built on `r format(Sys.time(), '%d %B %Y')`"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Introduction
+## Introduction {.unnumbered}
 
 The following is intended as a set of tips for people coding or about to code an R package.
 
