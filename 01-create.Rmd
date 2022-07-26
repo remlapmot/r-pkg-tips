@@ -41,7 +41,7 @@ knitr::include_graphics("img/devtools-create.png")
 knitr::include_graphics("img/rstudio-mynewpackage.png")
 ```
 - If you are working on an existing package define folder/repo as an RStudio project (`.Rproj` file) to get the very helpful Build pane 
-  - https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
+  - <https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects>
   - Key line in the `.Rproj` file is: `BuildType: Package` (`None`/`Package`/`Makefile`/`Website`/`Custom`) - Build pane appears for all but `None`
 - Initialise the folder as a Git repo: `usethis::use_git()`
 - Now edit/complete the obvious fields in the `DESCRIPTION` file
