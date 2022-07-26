@@ -1,0 +1,28 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: Tips for coding R packages
+  chapters:
+    - index.Rmd
+    - 01-create.Rmd
+    - 02-states.Rmd
+    - 03-r-and-helpfiles.Rmd
+    - 04-classes.Rmd
+    - 05-namespace.Rmd
+    - 06-checking.Rmd
+    - 07-git-and-github.Rmd
+    - 08-system-dependencies.Rmd
+    - 99-session-info.Rmd
+  link-external-icon: true
+  repo-url: https://github.com/remlapmot/r-pkg-tips
+  repo-actions: source
+  site-url: https://remlapmot.github.io/r-pkg-tips/
+
+format:
+  html:
+    toc: true
+    link-external-icon: true
+    theme: cosmo
+    css: styles.css
