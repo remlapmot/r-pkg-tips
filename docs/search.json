@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Tips for coding R packages",
+    "section": "",
+    "text": "The following is intended as a set of tips for people coding or about to code an R package.\nExtensive guides to writing an R package are given\n\nat https://r-pkgs.org/\nand https://kbroman.org/pkg_primer/\n\nthese tips are meant to supplement them.\nAlso look at the source code of your favourite R packages on GitHub\n\nhttps://github.com/rstudio/rmarkdown"
+  },
+  {
+    "objectID": "01-create.html",
+    "href": "01-create.html",
+    "title": "1  Create a new package",
+    "section": "",
+    "text": "install.packages(\"devtools\")\ndevtools::create(\"mynewpackage\")\n\n\nThis will generate\n\n✔ Setting active project to '/Users/tom/Documents/GitHub/r-pkg-tips/mynewpackage'\n✔ Creating 'R/'\n✔ Writing 'DESCRIPTION'Package: mynewpackage\nTitle: What the Package Does (One Line, Title Case)\nVersion: 0.0.0.9000\nAuthors@R (parsed):\n    * First Last <first.last@example.com> [aut, cre] (YOUR-ORCID-ID)\nDescription: What the package does (one paragraph).\nLicense: `use_mit_license()`, `use_gpl3_license()` or friends to\n    pick a license\nEncoding: UTF-8\nRoxygen: list(markdown = TRUE)\nRoxygenNote: 7.2.0\n✔ Writing 'NAMESPACE'\n✔ Writing 'mynewpackage.Rproj'\n✔ Adding '^mynewpackage\\\\.Rproj$' to '.Rbuildignore'\n✔ Adding '.Rproj.user' to '.gitignore'\n✔ Adding '^\\\\.Rproj\\\\.user$' to '.Rbuildignore'\n✔ Setting active project to '<no active project>'\n\nAs seen in RStudio File pane (nb. even though there is a .gitignore file this folder is not initialised as a git repo yet - look for .git folder)\n\n\n\n\n\n\n\nDouble click the .Rproj file to open in RStudio as an RStudio project - this gives you the very helpful Build pane\n\n\n\n\n\n\n\nIf you are working on an existing package define folder/repo as an RStudio project (.Rproj file) to get the very helpful Build pane\n\nhttps://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects\nKey line in the .Rproj file is: BuildType: Package (None/Package/Makefile/Website/Custom) - Build pane appears for all but None\n\nInitialise the folder as a Git repo: usethis::use_git()\nNow edit/complete the obvious fields in the DESCRIPTION file\nNot all of these files will be put into our package, e.g., when we build the source package at the moment only the DESCRIPTION and NAMESPACE files are included (as our R and man directories are empty)\n\n\n\n\n\n\n\nTo prove the contents of the .tar.gz file are currently only"
+  },
+  {
+    "objectID": "02-states.html",
+    "href": "02-states.html",
+    "title": "2  States",
+    "section": "",
+    "text": "Files change location depending upon state - see here\nSource - the files you code - what’s in your new folder / GitHub repo\n(Source) bundled - the .tar.gz file of your source files excluding those in .Rbuildignore - what you need to submit to CRAN\nBinary - the ‘compiled’ version of the bundled package compressed (.zip on Windows)\n\nthe helpfiles converted from .Rd to .html\nVignettes compiled to .html\nany C code etc. will have been compiled\n/R no longer contains .R files, now contains 3 files that store the parsed functions in an efficient file format - result of loading all the R code and then saving the functions with save()\n\n\n\n\n\n\nInstalled - the uncompressed zip file in the correct library folder\nIn memory - the binary, installed package loaded via library()"
+  },
+  {
+    "objectID": "03-r-and-helpfiles.html",
+    "href": "03-r-and-helpfiles.html",
+    "title": "3  .R and helpfiles",
+    "section": "",
+    "text": "Roxygen: list(markdown = TRUE)\n\nYour .R files will look something like the following, i.e., roxygen code for the helpfile for a function before the actual R code of the function\n\n\n#' The length of a string\n#'\n#' Technically this returns the number of \"code points\", in a string. One\n#' code point usually corresponds to one character, but not always. For example,\n#' an u with a umlaut might be represented as a single character or as the\n#' combination a u and an umlaut.\n#'\n#' @inheritParams str_detect\n#' @return A numeric vector giving number of characters (code points) in each\n#'    element of the character vector. Missing string have missing length.\n#' @seealso [stringi::stri_length()] which this function wraps.\n#' @export\n#' @examples\n#' str_length(letters)\n#' str_length(NA)\n#' str_length(factor(\"abc\"))\n#' str_length(c(\"i\", \"like\", \"programming\", NA))\nstr_length <- function(string) {\n  ...\n}\n\n\nRunning devtools::document() will generate your .Rd files from your .R files"
+  },
+  {
+    "objectID": "04-classes.html",
+    "href": "04-classes.html",
+    "title": "4  Classes",
+    "section": "",
+    "text": "# A function defines a new S3 class\n# This function shouldn't really print anything to the R console when run\n#' @export\nmyfun <- function(...){\n  ...\n  class(output) <- \"mynewclass\"\n  # alternatively given objects can have multiple classes, append your new class\n  # class(output) <- append(\"mynewclass\", class(output))\n  output\n}\n\n# print method for objects of class mynewclass\n#' @export\nprint.mynewclass <- function(x, digits = max(3, getOption(\"digits\") - 3), ...){\n  ...\n  invisible(x)\n}\n\n# summary method for objects of class mynewclass\n#' @export\nsummary.mynewclass <- function(...){\n  ...\n  class(output) <- \"summary.mynewclass\"\n  output\n}\n\n# print method for objects of class summary.mynewclass\n#' @export\nprint.summary.mynewclass <- function(x, digits = max(3, getOption(\"digits\") - 3),...){\n  ...\n  invisible(x)  \n}\n\n\nI recommend only using dots/periods in your function names if you are coding under the S3 class system"
+  },
+  {
+    "objectID": "05-namespace.html",
+    "href": "05-namespace.html",
+    "title": "5  NAMESPACE",
+    "section": "",
+    "text": "Every package has a package environment (the exported functions) and a namespace environment (both exported and internal functions)"
+  },
+  {
+    "objectID": "06-checking.html",
+    "href": "06-checking.html",
+    "title": "6  Checking",
+    "section": "",
+    "text": "You can setup a GitHub Action to run this on every commit into repo\nusethis::use_github_action()/usethis::use_tidy_github_actions() or copy from https://github.com/r-lib/actions\nStata and python have no such similarly thorough checking system, so well worth using\nThink about including tests with testthat or another testing package\nIf your package passes R CMD check then you can build a pkgdown website for your package with one command pkgdown::build_site()\nUse win-builder for a further check https://win-builder.r-project.org/\n\n\n\n\n\n\n\nFor both win-builder and CRAN you will need to submit the source version of your package as a .tar.gz file, e.g. in RStudio or issue R CMD build mynewpackage at the command line\n\nNote the .tar.gz file is what remotes::install_github() makes then installs if installing from GitHub"
+  },
+  {
+    "objectID": "07-git-and-github.html",
+    "href": "07-git-and-github.html",
+    "title": "7  Git and GitHub",
+    "section": "",
+    "text": "I prefer not to keep my git repositories in a folder which is also synchronized with OneDrive/Google Drive, e.g., when you render an R Markdown file the syncing of all the auxiliary files that are created can be very annoying\nWhen contributing to a new package, after forking on GitHub, then cloning to your local machine, and opening in RStudio/setting working directory to top level of package run devtools::install_dev_deps() to install all packages under Depends, Imports, and Suggests in its DESCRIPTION file\nYour repo can contain much more than just your R package\n\nIt will often additionally contain the static website for the package (made with pkgdown) which can be hosted for free using GitHub Pages/Netlify\nRemember to exclude the files/folders not the package by adding them to the .Rbuildignore file\n\nSome people don’t like others distributing packages through a GitHub repo, because install_github() looks for a change in the hash of the latest commit - but that may have been in a file not included in the source package"
+  },
+  {
+    "objectID": "08-system-dependencies.html",
+    "href": "08-system-dependencies.html",
+    "title": "8  System dependencies",
+    "section": "",
+    "text": "> install.packages(\"openssl\", type = \"source\")\n* installing *source* package 'openssl' ...\n** package 'openssl' successfully unpacked and MD5 sums checked\nUsing PKG_CFLAGS=\n------------------------- ANTICONF ERROR ---------------------------\nConfiguration failed because openssl was not found. Try installing:\n * deb: libssl-dev (Debian, Ubuntu, etc)\n * rpm: openssl-devel (Fedora, CentOS, RHEL)\n * csw: libssl_dev (Solaris)\n * brew: openssl@1.1 (Mac OSX)\nIf openssl is already installed, check that 'pkg-config' is in your\nPATH and PKG_CONFIG_PATH contains a openssl.pc file. If pkg-config\nis unavailable you can set INCLUDE_DIR and LIB_DIR manually via:\nR CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'\n--------------------------------------------------------------------\nERROR: configuration failed for package 'openssl'\n* removing '/usr/local/lib/R/site-library/openssl'\n\nCheck if a package name is mentioned in the error message. To install it use the following tools for your operating system\n\nWindows:\n\nInstall RTools42, this provides the pacman system\n\nmacOS:\n\nInstall Command Line Tools, issue in the Terminal app\nxcode-select --install\nMost dependencies are available using Homebrew, e.g.,\nbrew install ...\n\nLinux\n\nUse the package manager with your distro, e.g. on Ubuntu\nsudo apt-get install ..."
+  },
+  {
+    "objectID": "99-session-info.html",
+    "href": "99-session-info.html",
+    "title": "9  Session info",
+    "section": "",
+    "text": "sessioninfo::session_info()\n\n─ Session info ───────────────────────────────────────────────────────────────\n setting  value\n version  R version 4.2.1 (2022-06-23)\n os       macOS Monterey 12.5\n system   aarch64, darwin20\n ui       X11\n language (EN)\n collate  en_GB.UTF-8\n ctype    en_GB.UTF-8\n tz       Europe/London\n date     2022-07-26\n pandoc   2.18 @ /opt/homebrew/bin/ (via rmarkdown)\n\n─ Packages ───────────────────────────────────────────────────────────────────\n package     * version date (UTC) lib source\n cli           3.3.0   2022-04-25 [3] CRAN (R 4.2.0)\n digest        0.6.29  2021-12-01 [3] CRAN (R 4.2.0)\n evaluate      0.15    2022-02-18 [3] CRAN (R 4.2.0)\n fastmap       1.1.0   2021-01-25 [3] CRAN (R 4.2.0)\n htmltools     0.5.3   2022-07-18 [3] CRAN (R 4.2.1)\n htmlwidgets   1.5.4   2021-09-08 [3] CRAN (R 4.2.0)\n jsonlite      1.8.0   2022-02-22 [3] CRAN (R 4.2.0)\n knitr         1.39    2022-04-26 [3] CRAN (R 4.2.0)\n magrittr      2.0.3   2022-03-30 [3] CRAN (R 4.2.0)\n rlang         1.0.4   2022-07-12 [3] CRAN (R 4.2.1)\n rmarkdown     2.14    2022-04-25 [3] CRAN (R 4.2.0)\n sessioninfo   1.2.2   2021-12-06 [3] CRAN (R 4.2.0)\n stringi       1.7.8   2022-07-11 [3] CRAN (R 4.2.1)\n stringr       1.4.0   2019-02-10 [3] CRAN (R 4.2.0)\n xfun          0.31    2022-05-10 [3] CRAN (R 4.2.0)\n\n [1] /Users/tom/Library/R/arm64/4.2/library\n [2] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/site-library\n [3] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library\n\n──────────────────────────────────────────────────────────────────────────────"
+  }
+]

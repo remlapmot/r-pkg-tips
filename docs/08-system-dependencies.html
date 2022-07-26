@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tom Palmer">
-<meta name="dcterms.date" content="2022-07-26">
 
-<title>Tips for coding R packages</title>
+<title>Tips for coding R packages - 8&nbsp; System dependencies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -27,7 +25,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-create.html" rel="next">
+<link href="./99-session-info.html" rel="next">
+<link href="./07-git-and-github.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,7 +66,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Tips for coding R packages</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">System dependencies</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -95,7 +94,7 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -135,7 +134,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-system-dependencies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">System dependencies</span></a>
+  <a href="./08-system-dependencies.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">System dependencies</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -148,61 +147,80 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/remlapmot/r-pkg-tips/blob/main/index.Rmd" class="toc-action">View source</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Tips for coding R packages</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">System dependencies</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Tom Palmer </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">July 26, 2022</p>
-    </div>
-  </div>
     
   </div>
   
 
 </header>
 
-<section id="introduction" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<p>The following is intended as a set of tips for people coding or about to code an R package.</p>
-<p>Extensive guides to writing an R package are given</p>
 <ul>
-<li>at <a href="https://r-pkgs.org/" class="uri">https://r-pkgs.org/</a></li>
-<li>and <a href="https://kbroman.org/pkg_primer/" class="uri">https://kbroman.org/pkg_primer/</a></li>
+<li>Source R packages are not totally self-contained if external C libraries (or similar) are required to build it as they are not included in the <code>.tar.gz</code> file</li>
+<li>To install such a package either download the binary package from CRAN (binary packages for Windows take about 1 day longer to appear after the new source version appears)/RSPM/package manager
+<ul>
+<li><p>If you never want this problem always click “No” on this window</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/do-you-want-to-install-from-sources.png" class="img-fluid" width="318"></p>
+</div>
+</div></li>
+</ul></li>
+<li>Or, install the required system dependencies on your computer first, e.g.&nbsp;you may see installation failures such as<br>
+</li>
 </ul>
-<p>these tips are meant to supplement them.</p>
-<p>Also look at the source code of your favourite R packages on GitHub</p>
+<pre><code>&gt; install.packages("openssl", type = "source")
+* installing *source* package 'openssl' ...
+** package 'openssl' successfully unpacked and MD5 sums checked
+Using PKG_CFLAGS=
+------------------------- ANTICONF ERROR ---------------------------
+Configuration failed because openssl was not found. Try installing:
+ * deb: libssl-dev (Debian, Ubuntu, etc)
+ * rpm: openssl-devel (Fedora, CentOS, RHEL)
+ * csw: libssl_dev (Solaris)
+ * brew: openssl@1.1 (Mac OSX)
+If openssl is already installed, check that 'pkg-config' is in your
+PATH and PKG_CONFIG_PATH contains a openssl.pc file. If pkg-config
+is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
+R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+--------------------------------------------------------------------
+ERROR: configuration failed for package 'openssl'
+* removing '/usr/local/lib/R/site-library/openssl'</code></pre>
 <ul>
-<li><a href="https://github.com/rstudio/rmarkdown" class="uri">https://github.com/rstudio/rmarkdown</a></li>
+<li>Check if a package name is mentioned in the error message. To install it use the following tools for your operating system<br>
+</li>
+<li>Windows:
+<ul>
+<li>Install <a href="https://cran.r-project.org/bin/windows/Rtools/">RTools42</a>, this provides the <a href="https://github.com/r-windows/docs/blob/master/rtools40.md#system-libraries-and-pacman"><code>pacman</code></a> system</li>
+</ul></li>
+<li>macOS:
+<ul>
+<li><p>Install Command Line Tools, issue in the Terminal app</p>
+<pre><code>xcode-select --install</code></pre></li>
+<li><p>Most dependencies are available using <a href="https://brew.sh/">Homebrew</a>, e.g.,</p>
+<pre><code>brew install ...</code></pre></li>
+</ul></li>
+<li>Linux
+<ul>
+<li><p>Use the package manager with your distro, e.g.&nbsp;on Ubuntu</p>
+<pre><code>sudo apt-get install ...</code></pre></li>
+</ul></li>
 </ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -318,10 +336,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./07-git-and-github.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Git and GitHub</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-create.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Create a new package</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./99-session-info.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Session info</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

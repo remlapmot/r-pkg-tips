@@ -1,0 +1,1 @@
+Sitemap: https://remlapmot.github.io/r-pkg-tips/sitemap.xml

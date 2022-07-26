@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tom Palmer">
-<meta name="dcterms.date" content="2022-07-26">
 
-<title>Tips for coding R packages</title>
+<title>Tips for coding R packages - 5&nbsp; NAMESPACE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -27,7 +25,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-create.html" rel="next">
+<link href="./06-checking.html" rel="next">
+<link href="./04-classes.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,7 +66,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Tips for coding R packages</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">NAMESPACE</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -95,7 +94,7 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -120,7 +119,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-namespace.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">NAMESPACE</span></a>
+  <a href="./05-namespace.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">NAMESPACE</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -148,61 +147,49 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/remlapmot/r-pkg-tips/blob/main/index.Rmd" class="toc-action">View source</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Tips for coding R packages</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">NAMESPACE</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Tom Palmer </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">July 26, 2022</p>
-    </div>
-  </div>
     
   </div>
   
 
 </header>
 
-<section id="introduction" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<p>The following is intended as a set of tips for people coding or about to code an R package.</p>
-<p>Extensive guides to writing an R package are given</p>
 <ul>
-<li>at <a href="https://r-pkgs.org/" class="uri">https://r-pkgs.org/</a></li>
-<li>and <a href="https://kbroman.org/pkg_primer/" class="uri">https://kbroman.org/pkg_primer/</a></li>
+<li>The <code>NAMESPACE</code> file is written by devtools when you run <code>devtools::document()</code> on your correctly formatted helpfiles</li>
+<li>You must specify to <code>@export</code> functions you want exported from your package!</li>
+<li>Remember to <code>@importFrom pkgname fn</code> the functions you have used from other packages in the roxygen code before your function</li>
+<li>Read <a href="https://r-pkgs.org/namespace.html" class="uri">https://r-pkgs.org/namespace.html</a> many times!</li>
+<li>Remember what happens when we load a package - an environment of its objects are placed at the top of R’s search path (figure from <a href="https://adv-r.hadley.nz/environments.html#special-environments">here</a>)</li>
 </ul>
-<p>these tips are meant to supplement them.</p>
-<p>Also look at the source code of your favourite R packages on GitHub</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/environments.png" class="img-fluid" width="539"></p>
+</div>
+</div>
 <ul>
-<li><a href="https://github.com/rstudio/rmarkdown" class="uri">https://github.com/rstudio/rmarkdown</a></li>
+<li>Every package has a package environment (the exported functions) and a namespace environment (both exported and internal functions)</li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/namespaces-and-environments.png" class="img-fluid" width="536"></p>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -318,10 +305,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./04-classes.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Classes</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-create.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Create a new package</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06-checking.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Checking</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

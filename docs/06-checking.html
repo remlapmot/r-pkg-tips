@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tom Palmer">
-<meta name="dcterms.date" content="2022-07-26">
 
-<title>Tips for coding R packages</title>
+<title>Tips for coding R packages - 6&nbsp; Checking</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -27,7 +25,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-create.html" rel="next">
+<link href="./07-git-and-github.html" rel="next">
+<link href="./05-namespace.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,7 +66,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Tips for coding R packages</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Checking</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -95,7 +94,7 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -125,7 +124,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-checking.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Checking</span></a>
+  <a href="./06-checking.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Checking</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -148,61 +147,62 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/remlapmot/r-pkg-tips/blob/main/index.Rmd" class="toc-action">View source</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Tips for coding R packages</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Checking</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Tom Palmer </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">July 26, 2022</p>
-    </div>
-  </div>
     
   </div>
   
 
 </header>
 
-<section id="introduction" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<p>The following is intended as a set of tips for people coding or about to code an R package.</p>
-<p>Extensive guides to writing an R package are given</p>
 <ul>
-<li>at <a href="https://r-pkgs.org/" class="uri">https://r-pkgs.org/</a></li>
-<li>and <a href="https://kbroman.org/pkg_primer/" class="uri">https://kbroman.org/pkg_primer/</a></li>
+<li>Use <code>R CMD check</code>/<code>devtools::check()</code>/Check button in RStudio Build pane</li>
+<li>Aim for 0 errors and 0 warnings - this is the minimum requirement for CRAN</li>
 </ul>
-<p>these tips are meant to supplement them.</p>
-<p>Also look at the source code of your favourite R packages on GitHub</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/r-cmd-check-output.png" class="img-fluid" width="778"></p>
+</div>
+</div>
 <ul>
-<li><a href="https://github.com/rstudio/rmarkdown" class="uri">https://github.com/rstudio/rmarkdown</a></li>
+<li>You can setup a GitHub Action to run this on every commit into repo</li>
+<li><code>usethis::use_github_action()</code>/<code>usethis::use_tidy_github_actions()</code> or copy from <a href="https://github.com/r-lib/actions" class="uri">https://github.com/r-lib/actions</a></li>
+<li>Stata and python have no such similarly thorough checking system, so well worth using</li>
+<li>Think about including tests with <a href="https://testthat.r-lib.org/">testthat</a> or another testing package</li>
+<li>If your package passes <code>R CMD check</code> then you can build a pkgdown website for your package with one command <code>pkgdown::build_site()</code></li>
+<li>Use win-builder for a further check <a href="https://win-builder.r-project.org/" class="uri">https://win-builder.r-project.org/</a></li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/win-builder-screenshot.png" class="img-fluid" width="674"></p>
+</div>
+</div>
+<ul>
+<li>For both win-builder and CRAN you will need to submit the source version of your package as a <code>.tar.gz</code> file, e.g.&nbsp;in RStudio or issue <code>R CMD build mynewpackage</code> at the command line
+<ul>
+<li>Note the <code>.tar.gz</code> file is what <code>remotes::install_github()</code> makes then installs if installing from GitHub</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="img/save-as-source-package-output.png" class="img-fluid" width="782"></p>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -318,10 +318,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./05-namespace.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">NAMESPACE</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-create.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Create a new package</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07-git-and-github.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Git and GitHub</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
