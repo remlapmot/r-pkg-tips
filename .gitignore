@@ -37,3 +37,5 @@ rsconnect/
 
 *.rds
 mynewpackage/
+
+/.quarto/
