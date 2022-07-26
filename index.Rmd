@@ -1,8 +1,6 @@
 ---
-title: "Tips for coding R packages"
 author: "Tom Palmer"
 date: "Last built on `r format(Sys.time(), '%d %B %Y')`"
-site: bookdown::bookdown_site
 ---
 
 ```{r setup, include=FALSE}
