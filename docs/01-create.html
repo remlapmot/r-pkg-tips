@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -232,15 +232,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <ul>
-<li>Create a new package by first installing <strong>devtools</strong> and then running</li>
-</ul>
-<div class="cell">
+<li><p>Create a new package by first installing <strong>devtools</strong> and then running</p>
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">create</span>(<span class="st">"mynewpackage"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>This will generate</li>
-</ul>
+</div></li>
+<li><p>This will generate</p>
 <pre><code>✔ Setting active project to '/Users/tom/Documents/GitHub/r-pkg-tips/mynewpackage'
 ✔ Creating 'R/'
 ✔ Writing 'DESCRIPTION'Package: mynewpackage
@@ -259,46 +256,55 @@ RoxygenNote: 7.2.0
 ✔ Adding '^mynewpackage\\.Rproj$' to '.Rbuildignore'
 ✔ Adding '.Rproj.user' to '.gitignore'
 ✔ Adding '^\\.Rproj\\.user$' to '.Rbuildignore'
-✔ Setting active project to '&lt;no active project&gt;'</code></pre>
-<ul>
-<li>As seen in RStudio File pane (nb. even though there is a <code>.gitignore</code> file this folder is not initialised as a git repo yet - look for <code>.git</code> folder)</li>
-</ul>
-<div class="cell">
+✔ Setting active project to '&lt;no active project&gt;'</code></pre></li>
+<li><p>As seen in RStudio File pane (nb. even though there is a <code>.gitignore</code> file this folder is not initialised as a git repo yet - look for <code>.git</code> folder)</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/devtools-create.png" class="img-fluid" width="693"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/devtools-create.png" class="img-fluid figure-img" width="693"></p>
+</figure>
 </div>
 </div>
-<ul>
-<li>Double click the <code>.Rproj</code> file to open in RStudio as an RStudio project - this gives you the very helpful Build pane</li>
-</ul>
-<div class="cell">
+</div></li>
+<li><p>Double click the <code>.Rproj</code> file to open in RStudio as an RStudio project - this gives you the very helpful Build pane</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/rstudio-mynewpackage.png" class="img-fluid" width="1440"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-mynewpackage.png" class="img-fluid figure-img" width="1440"></p>
+</figure>
 </div>
 </div>
-<ul>
-<li>If you are working on an existing package define folder/repo as an RStudio project (<code>.Rproj</code> file) to get the very helpful Build pane
+</div></li>
+<li><p>If you are working on an existing package define folder/repo as an RStudio project (<code>.Rproj</code> file) to get the very helpful Build pane</p>
 <ul>
 <li><a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects" class="uri">https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects</a></li>
 <li>Key line in the <code>.Rproj</code> file is: <code>BuildType: Package</code> (<code>None</code>/<code>Package</code>/<code>Makefile</code>/<code>Website</code>/<code>Custom</code>) - Build pane appears for all but <code>None</code></li>
 </ul></li>
-<li>Initialise the folder as a Git repo: <code>usethis::use_git()</code></li>
-<li>Now edit/complete the obvious fields in the <code>DESCRIPTION</code> file</li>
-<li>Not all of these files will be put into our package, e.g., when we build the source package at the moment only the <code>DESCRIPTION</code> and <code>NAMESPACE</code> files are included (as our <code>R</code> and <code>man</code> directories are empty)</li>
-</ul>
-<div class="cell">
+<li><p>Initialise the folder as a Git repo: <code>usethis::use_git()</code></p></li>
+<li><p>Now edit/complete the obvious fields in the <code>DESCRIPTION</code> file</p></li>
+<li><p>Not all of these files will be put into our package, e.g., when we build the source package at the moment only the <code>DESCRIPTION</code> and <code>NAMESPACE</code> files are included (as our <code>R</code> and <code>man</code> directories are empty)</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/build-source-pkg-mynewpackage.png" class="img-fluid" width="467"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/build-source-pkg-mynewpackage.png" class="img-fluid figure-img" width="467"></p>
+</figure>
 </div>
 </div>
-<ul>
-<li>To prove the contents of the <code>.tar.gz</code> file are currently only</li>
-</ul>
-<div class="cell">
+</div></li>
+<li><p>To prove the contents of the <code>.tar.gz</code> file are currently only</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/source-contents-mynewpackage.png" class="img-fluid" width="476"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/source-contents-mynewpackage.png" class="img-fluid figure-img" width="476"></p>
+</figure>
 </div>
 </div>
+</div></li>
+</ul>
 
 
 

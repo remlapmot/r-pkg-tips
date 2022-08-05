@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -169,19 +169,21 @@ ul.task-list{list-style: none;}
 </header>
 
 <ul>
-<li>Source R packages are not totally self-contained if external C libraries (or similar) are required to build it as they are not included in the <code>.tar.gz</code> file</li>
-<li>To install such a package either download the binary package from CRAN (binary packages for Windows take about 1 day longer to appear after the new source version appears)/RSPM/package manager
+<li><p>Source R packages are not totally self-contained if external C libraries (or similar) are required to build it as they are not included in the <code>.tar.gz</code> file</p></li>
+<li><p>To install such a package either download the binary package from CRAN (binary packages for Windows take about 1 day longer to appear after the new source version appears)/RSPM/package manager</p>
 <ul>
 <li><p>If you never want this problem always click “No” on this window</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/do-you-want-to-install-from-sources.png" class="img-fluid" width="318"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/do-you-want-to-install-from-sources.png" class="img-fluid figure-img" width="318"></p>
+</figure>
+</div>
 </div>
 </div></li>
 </ul></li>
-<li>Or, install the required system dependencies on your computer first, e.g.&nbsp;you may see installation failures such as<br>
-</li>
-</ul>
+<li><p>Or, install the required system dependencies on your computer first, e.g.&nbsp;you may see installation failures such as</p>
 <pre><code>&gt; install.packages("openssl", type = "source")
 * installing *source* package 'openssl' ...
 ** package 'openssl' successfully unpacked and MD5 sums checked
@@ -198,22 +200,21 @@ is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
 R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
 --------------------------------------------------------------------
 ERROR: configuration failed for package 'openssl'
-* removing '/usr/local/lib/R/site-library/openssl'</code></pre>
-<ul>
-<li>Check if a package name is mentioned in the error message. To install it use the following tools for your operating system<br>
-</li>
-<li>Windows:
+* removing '/usr/local/lib/R/site-library/openssl'</code></pre></li>
+<li><p>Check if a package name is mentioned in the error message. To install it use the following tools for your operating system<br>
+</p></li>
+<li><p>Windows:</p>
 <ul>
 <li>Install <a href="https://cran.r-project.org/bin/windows/Rtools/">RTools42</a>, this provides the <a href="https://github.com/r-windows/docs/blob/master/rtools40.md#system-libraries-and-pacman"><code>pacman</code></a> system</li>
 </ul></li>
-<li>macOS:
+<li><p>macOS:</p>
 <ul>
 <li><p>Install Command Line Tools, issue in the Terminal app</p>
 <pre><code>xcode-select --install</code></pre></li>
 <li><p>Most dependencies are available using <a href="https://brew.sh/">Homebrew</a>, e.g.,</p>
 <pre><code>brew install ...</code></pre></li>
 </ul></li>
-<li>Linux
+<li><p>Linux</p>
 <ul>
 <li><p>Use the package manager with your distro, e.g.&nbsp;on Ubuntu</p>
 <pre><code>sudo apt-get install ...</code></pre></li>

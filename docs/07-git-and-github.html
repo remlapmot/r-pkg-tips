@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -176,16 +176,18 @@ ul.task-list{list-style: none;}
 </ul></li>
 <li>When coding, I recommend making your changes
 <ul>
-<li>Then select relevant changed lines</li>
-<li>Use sensible commit messages, i.e., do not make one massive commit with commit message “Edits”!</li>
-</ul></li>
-</ul>
-<div class="cell">
+<li><p>Then select relevant changed lines</p></li>
+<li><p>Use sensible commit messages, i.e., do not make one massive commit with commit message “Edits”!</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/github-desktop-select-lines.png" class="img-fluid" width="957"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/github-desktop-select-lines.png" class="img-fluid figure-img" width="957"></p>
+</figure>
 </div>
 </div>
-<ul>
+</div></li>
+</ul></li>
 <li>I prefer not to keep my git repositories in a folder which is also synchronized with OneDrive/Google Drive, e.g., when you render an R Markdown file the syncing of all the auxiliary files that are created can be very annoying</li>
 <li>When contributing to a new package, after forking on GitHub, then cloning to your local machine, and opening in RStudio/setting working directory to top level of package run <code>devtools::install_dev_deps()</code> to install all packages under Depends, Imports, and Suggests in its <code>DESCRIPTION</code> file</li>
 <li>Your repo can contain much more than just your R package

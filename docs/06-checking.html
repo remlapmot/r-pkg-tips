@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -169,38 +169,46 @@ ul.task-list{list-style: none;}
 </header>
 
 <ul>
-<li>Use <code>R CMD check</code>/<code>devtools::check()</code>/Check button in RStudio Build pane</li>
-<li>Aim for 0 errors and 0 warnings - this is the minimum requirement for CRAN</li>
-</ul>
-<div class="cell">
+<li><p>Use <code>R CMD check</code>/<code>devtools::check()</code>/Check button in RStudio Build pane</p></li>
+<li><p>Aim for 0 errors and 0 warnings - this is the minimum requirement for CRAN</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/r-cmd-check-output.png" class="img-fluid" width="778"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/r-cmd-check-output.png" class="img-fluid figure-img" width="778"></p>
+</figure>
 </div>
 </div>
-<ul>
-<li>You can setup a GitHub Action to run this on every commit into repo</li>
-<li><code>usethis::use_github_action()</code>/<code>usethis::use_tidy_github_actions()</code> or copy from <a href="https://github.com/r-lib/actions" class="uri">https://github.com/r-lib/actions</a></li>
-<li>Stata and python have no such similarly thorough checking system, so well worth using</li>
-<li>Think about including tests with <a href="https://testthat.r-lib.org/">testthat</a> or another testing package</li>
-<li>If your package passes <code>R CMD check</code> then you can build a pkgdown website for your package with one command <code>pkgdown::build_site()</code></li>
-<li>Use win-builder for a further check <a href="https://win-builder.r-project.org/" class="uri">https://win-builder.r-project.org/</a></li>
-</ul>
-<div class="cell">
+</div></li>
+<li><p>You can setup a GitHub Action to run this on every commit into repo</p></li>
+<li><p><code>usethis::use_github_action()</code>/<code>usethis::use_tidy_github_actions()</code> or copy from <a href="https://github.com/r-lib/actions" class="uri">https://github.com/r-lib/actions</a></p></li>
+<li><p>Stata and python have no such similarly thorough checking system, so well worth using</p></li>
+<li><p>Think about including tests with <a href="https://testthat.r-lib.org/">testthat</a> or another testing package</p></li>
+<li><p>If your package passes <code>R CMD check</code> then you can build a pkgdown website for your package with one command <code>pkgdown::build_site()</code></p></li>
+<li><p>Use win-builder for a further check <a href="https://win-builder.r-project.org/" class="uri">https://win-builder.r-project.org/</a></p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/win-builder-screenshot.png" class="img-fluid" width="674"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/win-builder-screenshot.png" class="img-fluid figure-img" width="674"></p>
+</figure>
 </div>
 </div>
+</div></li>
+<li><p>For both win-builder and CRAN you will need to submit the source version of your package as a <code>.tar.gz</code> file, e.g.&nbsp;in RStudio or issue <code>R CMD build mynewpackage</code> at the command line</p>
 <ul>
-<li>For both win-builder and CRAN you will need to submit the source version of your package as a <code>.tar.gz</code> file, e.g.&nbsp;in RStudio or issue <code>R CMD build mynewpackage</code> at the command line
-<ul>
-<li>Note the <code>.tar.gz</code> file is what <code>remotes::install_github()</code> makes then installs if installing from GitHub</li>
+<li><p>Note the <code>.tar.gz</code> file is what <code>remotes::install_github()</code> makes then installs if installing from GitHub</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/save-as-source-package-output.png" class="img-fluid figure-img" width="782"></p>
+</figure>
+</div>
+</div>
+</div></li>
 </ul></li>
 </ul>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="img/save-as-source-package-output.png" class="img-fluid" width="782"></p>
-</div>
-</div>
 
 
 

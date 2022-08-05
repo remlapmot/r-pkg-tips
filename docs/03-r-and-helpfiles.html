@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -232,19 +232,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <ul>
-<li><code>.R</code> files contain the functions your packge will provide</li>
-<li>Don’t code helpfiles (<code>.Rd</code> files in the <code>man</code> folder) yourself</li>
-<li>Use Roxygen syntax through the <a href="https://github.com/r-lib/roxygen2">roxygen2 package</a>
+<li><p><code>.R</code> files contain the functions your packge will provide</p></li>
+<li><p>Don’t code helpfiles (<code>.Rd</code> files in the <code>man</code> folder) yourself</p></li>
+<li><p>Use Roxygen syntax through the <a href="https://github.com/r-lib/roxygen2">roxygen2 package</a></p>
 <ul>
 <li>Roxygen syntax lines begin <code>#'</code></li>
 </ul></li>
-<li>To additionally use markdown syntax within roxygen syntax add the following line to your <code>DESCRIPTION</code> file</li>
-</ul>
-<pre><code>Roxygen: list(markdown = TRUE)</code></pre>
-<ul>
-<li>Your <code>.R</code> files will look something like the following, i.e., roxygen code for the helpfile for a function before the actual R code of the function</li>
-</ul>
-<div class="cell">
+<li><p>To additionally use markdown syntax within roxygen syntax add the following line to your <code>DESCRIPTION</code> file</p>
+<pre><code>Roxygen: list(markdown = TRUE)</code></pre></li>
+<li><p>Your <code>.R</code> files will look something like the following, i.e., roxygen code for the helpfile for a function before the actual R code of the function</p>
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' The length of a string</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' Technically this returns the number of "code points", in a string. One</span></span>
@@ -265,9 +262,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>str_length <span class="ot">&lt;-</span> <span class="cf">function</span>(string) {</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  ...</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>Running <code>devtools::document()</code> will generate your <code>.Rd</code> files from your <code>.R</code> files</li>
+</div></li>
+<li><p>Running <code>devtools::document()</code> will generate your <code>.Rd</code> files from your <code>.R</code> files</p></li>
 </ul>
 
 

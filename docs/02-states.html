@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -169,31 +169,37 @@ ul.task-list{list-style: none;}
 </header>
 
 <ul>
-<li>Confusingly R packages can be in different states</li>
-</ul>
-<div class="cell">
+<li><p>Confusingly R packages can be in different states</p>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/cran-downloads-example.png" class="img-fluid" width="576"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/cran-downloads-example.png" class="img-fluid figure-img" width="576"></p>
+</figure>
 </div>
 </div>
-<ul>
-<li>Files change location depending upon state - see <a href="https://r-pkgs.org/package-structure-state.html#bundled-package">here</a></li>
-<li>Source - the files you code - what’s in your new folder / GitHub repo</li>
-<li>(Source) bundled - the <code>.tar.gz</code> file of your source files excluding those in <code>.Rbuildignore</code> - what you need to submit to CRAN</li>
-<li>Binary - the ‘compiled’ version of the bundled package compressed (<code>.zip</code> on Windows)
+</div></li>
+<li><p>Files change location depending upon state - see <a href="https://r-pkgs.org/package-structure-state.html#bundled-package">here</a></p></li>
+<li><p>Source - the files you code - what’s in your new folder / GitHub repo</p></li>
+<li><p>(Source) bundled - the <code>.tar.gz</code> file of your source files excluding those in <code>.Rbuildignore</code> - what you need to submit to CRAN</p></li>
+<li><p>Binary - the ‘compiled’ version of the bundled package compressed (<code>.zip</code> on Windows)</p>
 <ul>
 <li><p>the helpfiles converted from <code>.Rd</code> to <code>.html</code></p></li>
 <li><p>Vignettes compiled to <code>.html</code></p></li>
 <li><p>any C code etc. will have been compiled</p></li>
 <li><p><code>/R</code> no longer contains <code>.R</code> files, now contains 3 files that store the parsed functions in an efficient file format - result of loading all the R code and then saving the functions with <code>save()</code></p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="img/aer-binary-r-folder.png" class="img-fluid" width="574"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/aer-binary-r-folder.png" class="img-fluid figure-img" width="574"></p>
+</figure>
+</div>
 </div>
 </div></li>
 </ul></li>
-<li>Installed - the uncompressed zip file in the correct library folder</li>
-<li>In memory - the binary, installed package loaded via <code>library()</code></li>
+<li><p>Installed - the uncompressed zip file in the correct library folder</p></li>
+<li><p>In memory - the binary, installed package loaded via <code>library()</code></p></li>
 </ul>
 
 
