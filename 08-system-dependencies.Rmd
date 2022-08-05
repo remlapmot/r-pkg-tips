@@ -1,7 +1,7 @@
 # System dependencies
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 ```
 
 - Source R packages are not totally self-contained if external C libraries (or similar) are required to build it as they are not included in the `.tar.gz` file
@@ -11,25 +11,25 @@ knitr::opts_chunk$set(echo = FALSE)
     knitr::include_graphics("img/do-you-want-to-install-from-sources.png")
     ```
 - Or, install the required system dependencies on your computer first, e.g. you may see installation failures such as  
-```
-> install.packages("openssl", type = "source")
-* installing *source* package 'openssl' ...
-** package 'openssl' successfully unpacked and MD5 sums checked
-Using PKG_CFLAGS=
-------------------------- ANTICONF ERROR ---------------------------
-Configuration failed because openssl was not found. Try installing:
- * deb: libssl-dev (Debian, Ubuntu, etc)
- * rpm: openssl-devel (Fedora, CentOS, RHEL)
- * csw: libssl_dev (Solaris)
- * brew: openssl@1.1 (Mac OSX)
-If openssl is already installed, check that 'pkg-config' is in your
-PATH and PKG_CONFIG_PATH contains a openssl.pc file. If pkg-config
-is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
-R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
---------------------------------------------------------------------
-ERROR: configuration failed for package 'openssl'
-* removing '/usr/local/lib/R/site-library/openssl'
-```
+  ```
+  > install.packages("openssl", type = "source")
+  * installing *source* package 'openssl' ...
+  ** package 'openssl' successfully unpacked and MD5 sums checked
+  Using PKG_CFLAGS=
+  ------------------------- ANTICONF ERROR ---------------------------
+  Configuration failed because openssl was not found. Try installing:
+   * deb: libssl-dev (Debian, Ubuntu, etc)
+   * rpm: openssl-devel (Fedora, CentOS, RHEL)
+   * csw: libssl_dev (Solaris)
+   * brew: openssl@1.1 (Mac OSX)
+  If openssl is already installed, check that 'pkg-config' is in your
+  PATH and PKG_CONFIG_PATH contains a openssl.pc file. If pkg-config
+  is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
+  R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+  --------------------------------------------------------------------
+  ERROR: configuration failed for package 'openssl'
+  * removing '/usr/local/lib/R/site-library/openssl'
+  ```
 - Check if a package name is mentioned in the error message. To install it use the following tools for your operating system  
 - Windows: 
   - Install [RTools42](https://cran.r-project.org/bin/windows/Rtools/), this provides the [`pacman`](https://github.com/r-windows/docs/blob/master/rtools40.md#system-libraries-and-pacman) system

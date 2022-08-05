@@ -1,7 +1,7 @@
 # NAMESPACE
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 ```
   
 - The `NAMESPACE` file is written by devtools when you run `devtools::document()` on your correctly formatted helpfiles
@@ -9,10 +9,10 @@ knitr::opts_chunk$set(echo = FALSE)
 - Remember to `@importFrom pkgname fn` the functions you have used from other packages in the roxygen code before your function
 - Read <https://r-pkgs.org/namespace.html> many times!
 - Remember what happens when we load a package - an environment of its objects are placed at the top of R's search path (figure from [here](https://adv-r.hadley.nz/environments.html#special-environments))  
-```{r}
-knitr::include_graphics("img/environments.png")
-```
+  ```{r}
+  knitr::include_graphics("img/environments.png")
+  ```
 - Every package has a package environment (the exported functions) and a namespace environment (both exported and internal functions)
-```{r}
-knitr::include_graphics("img/namespaces-and-environments.png")
-```
+  ```{r}
+  knitr::include_graphics("img/namespaces-and-environments.png")
+  ```

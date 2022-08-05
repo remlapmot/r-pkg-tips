@@ -1,13 +1,13 @@
 # States
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 ```
 
 - Confusingly R packages can be in different states  
-```{r}
-knitr::include_graphics("img/cran-downloads-example.png")
-```
+  ```{r}
+  knitr::include_graphics("img/cran-downloads-example.png")
+  ```
 - Files change location depending upon state - see [here](https://r-pkgs.org/package-structure-state.html#bundled-package)
 - Source - the files you code - what's in your new folder / GitHub repo
 - (Source) bundled - the `.tar.gz` file of your source files excluding those in `.Rbuildignore` - what you need to submit to CRAN
