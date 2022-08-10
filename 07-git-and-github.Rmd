@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
     knitr::include_graphics("img/github-desktop-select-lines.png")
     ```  
   
-- I prefer not to keep my git repositories in a folder which is also synchronized with OneDrive/Google Drive, e.g., when you render an R Markdown file the syncing of all the auxiliary files that are created can be very annoying
+- I prefer not to keep my Git repositories in a folder which is also synchronized with OneDrive/Google Drive, e.g., when you render an R Markdown file the syncing of all the auxiliary files that are created can be very annoying
 - When contributing to a new package, after forking on GitHub, then cloning to your local machine, and opening in RStudio/setting working directory to top level of package run `devtools::install_dev_deps()` to install all packages under Depends, Imports, and Suggests in its `DESCRIPTION` file
 - Your repo can contain much more than just your R package
   - It will often additionally contain the static website for the package (made with pkgdown) which can be hosted for free using GitHub Pages/Netlify
