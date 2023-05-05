@@ -13,14 +13,16 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
   myfun <- function(...){
     ...
     class(output) <- "mynewclass"
-    # alternatively given objects can have multiple classes, append your new class
+    # alternatively given objects can have multiple classes,
+    # append your new class to any existing classes
     # class(output) <- append("mynewclass", class(output))
     output
   }
   
   # print method for objects of class mynewclass
   #' @export
-  print.mynewclass <- function(x, digits = max(3, getOption("digits") - 3), ...){
+  print.mynewclass <- function(x,
+    digits = max(3, getOption("digits") - 3), ...){
     ...
     invisible(x)
   }
@@ -35,7 +37,8 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
   
   # print method for objects of class summary.mynewclass
   #' @export
-  print.summary.mynewclass <- function(x, digits = max(3, getOption("digits") -   3),...){
+  print.summary.mynewclass <- function(x,
+    digits = max(3, getOption("digits") -   3),...){
     ...
     invisible(x)  
   }
