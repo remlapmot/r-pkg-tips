@@ -4,4 +4,5 @@ R session information for reproducibility.
 
 ```{r}
 sessioninfo::session_info()
+quarto::quarto_version()
 ```
