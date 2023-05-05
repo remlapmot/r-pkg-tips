@@ -32,7 +32,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
   ```
 - Check if a package name is mentioned in the error message. To install it use the following tools for your operating system  
 - Windows: 
-  - Install [RTools42](https://cran.r-project.org/bin/windows/Rtools/), this provides the [`pacman`](https://github.com/r-windows/docs/blob/master/rtools40.md#system-libraries-and-pacman) system
+  - Install the appropriate version of RTools (currently RTools 4.3 for R 4.3.0) from [here](https://cran.r-project.org/bin/windows/Rtools/), this provides the [`pacman`](https://github.com/r-windows/docs/blob/master/rtools40.md#system-libraries-and-pacman) system
 - macOS: 
   - Install Command Line Tools, issue in the Terminal app
     ```
