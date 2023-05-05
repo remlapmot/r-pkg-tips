@@ -1,0 +1,14 @@
+{
+  "hash": "44252d18081b8c19be83b26833e74973",
+  "result": {
+    "markdown": "# States\n\n\n\n\n\n- Confusingly R packages can be in different states  \n\n  ::: {.cell layout-align=\"center\"}\n  ::: {.cell-output-display}\n  ![](img/cran-downloads-example.png){fig-align='center'}\n  :::\n  :::\n\n- Files change location depending upon state - see [here](https://r-pkgs.org/package-structure-state.html#bundled-package)\n- Source - the files you code - what's in your new folder / GitHub repo\n- (Source) bundled - the `.tar.gz` file of your source files excluding those in `.Rbuildignore` - what you need to submit to CRAN\n- Binary - the 'compiled' version of the bundled package compressed (`.zip` on Windows)\n  - the helpfiles converted from `.Rd` to `.html`\n  - Vignettes compiled to `.html`\n  - any C code etc. will have been compiled\n  - `/R` no longer contains `.R` files, now contains 3 files that store the parsed functions in an efficient file format - result of loading all the R code and then saving the functions with `save()`\n\n    ::: {.cell layout-align=\"center\"}\n    ::: {.cell-output-display}\n    ![](img/aer-binary-r-folder.png){fig-align='center'}\n    :::\n    :::\n\n- Installed - the uncompressed zip file in the correct library folder\n- In memory - the binary, installed package loaded via `library()`\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

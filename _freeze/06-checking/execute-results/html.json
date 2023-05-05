@@ -1,0 +1,14 @@
+{
+  "hash": "439e824052eef74c34face62e3ae9159",
+  "result": {
+    "markdown": "# Checking  \n\n\n\n\n  \n- Use `R CMD check`/`devtools::check()`/Check button in RStudio Build pane\n- Aim for 0 errors and 0 warnings - this is the minimum requirement for CRAN  \n\n  ::: {.cell layout-align=\"center\"}\n  ::: {.cell-output-display}\n  ![](img/r-cmd-check-output.png){fig-align='center'}\n  :::\n  :::\n\n\n- You can setup a GitHub Action to run this on every commit into repo\n- `usethis::use_github_action()`/`usethis::use_tidy_github_actions()` or copy from <https://github.com/r-lib/actions>\n- Stata and python have no such similarly thorough checking system, so well worth using\n- Think about including tests with [testthat](https://testthat.r-lib.org/) or another testing package\n- If your package passes `R CMD check` then you can build a pkgdown website for your package with one command `pkgdown::build_site()`\n- Use win-builder for a further check <https://win-builder.r-project.org/>\n\n  ::: {.cell layout-align=\"center\"}\n  ::: {.cell-output-display}\n  ![](img/win-builder-screenshot.png){fig-align='center'}\n  :::\n  :::\n\n- For both win-builder and CRAN you will need to submit the source version of your package as a `.tar.gz` file, e.g. in RStudio or issue `R CMD build mynewpackage` at the command line  \n  - Note the `.tar.gz` file is what `remotes::install_github()` makes then installs if installing from GitHub  \n\n    ::: {.cell layout-align=\"center\"}\n    ::: {.cell-output-display}\n    ![](img/save-as-source-package-output.png){fig-align='center'}\n    :::\n    :::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

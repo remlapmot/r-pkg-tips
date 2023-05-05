@@ -1,0 +1,14 @@
+{
+  "hash": "fc64f887767f733826dedb8d899a80ff",
+  "result": {
+    "markdown": "# Classes  \n\n\n\n\n  \n- Use classes for your functions (S3 easiest system; S4, RC)\n- Under S3 your class probably needs `print`, `summary`, `print.summary` methods, defined as e.g. \n\n  ::: {.cell layout-align=\"center\"}\n  \n  ```{.r .cell-code}\n  # A function defines a new S3 class\n  # This function shouldn't really print anything to the R console when run\n  #' @export\n  myfun <- function(...){\n    ...\n    class(output) <- \"mynewclass\"\n    # alternatively given objects can have multiple classes,\n    # append your new class to any existing classes\n    # class(output) <- append(\"mynewclass\", class(output))\n    output\n  }\n  \n  # print method for objects of class mynewclass\n  #' @export\n  print.mynewclass <- function(x,\n    digits = max(3, getOption(\"digits\") - 3), ...){\n    ...\n    invisible(x)\n  }\n  \n  # summary method for objects of class mynewclass\n  #' @export\n  summary.mynewclass <- function(...){\n    ...\n    class(output) <- \"summary.mynewclass\"\n    output\n  }\n  \n  # print method for objects of class summary.mynewclass\n  #' @export\n  print.summary.mynewclass <- function(x,\n    digits = max(3, getOption(\"digits\") -   3),...){\n    ...\n    invisible(x)  \n  }\n  ```\n  :::\n\n- I recommend only using dots/periods in your function names if you are coding under the S3 class system\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

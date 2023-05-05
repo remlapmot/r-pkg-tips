@@ -1,0 +1,14 @@
+{
+  "hash": "9baff7631b48fe9f7c9bec76edaa62ab",
+  "result": {
+    "markdown": "# .R and helpfiles\n\n\n\n\n\n- `.R` files contain the functions your packge will provide\n- Don't code helpfiles (`.Rd` files in the `man` folder) yourself \n- Use Roxygen syntax through the [roxygen2 package](https://github.com/r-lib/roxygen2)\n  - Roxygen syntax lines begin `#' `\n- To additionally use markdown syntax within roxygen syntax add the following line to your `DESCRIPTION` file\n  ```\n  Roxygen: list(markdown = TRUE)\n  ```\n- Your `.R` files will look something like the following, i.e., roxygen code for the helpfile for a function before the actual R code of the function\n\n  ::: {.cell layout-align=\"center\"}\n  \n  ```{.r .cell-code}\n  #' The length of a string\n  #'\n  #' Technically this returns the number of \"code points\", in a string. One\n  #' code point usually corresponds to one character, but not always. For example,\n  #' an u with a umlaut might be represented as a single character or as the\n  #' combination a u and an umlaut.\n  #'\n  #' @inheritParams str_detect\n  #' @return A numeric vector giving number of characters (code points) in each\n  #'    element of the character vector. Missing string have missing length.\n  #' @seealso [stringi::stri_length()] which this function wraps.\n  #' @export\n  #' @examples\n  #' str_length(letters)\n  #' str_length(NA)\n  #' str_length(factor(\"abc\"))\n  #' str_length(c(\"i\", \"like\", \"programming\", NA))\n  str_length <- function(string) {\n    ...\n  }\n  ```\n  :::\n\n- Running `devtools::document()` will generate your `.Rd` files from your `.R` files\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

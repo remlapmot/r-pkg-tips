@@ -1,0 +1,14 @@
+{
+  "hash": "54a436bea450a694351ff8a438b43d29",
+  "result": {
+    "markdown": "# Git and GitHub\n\n\n\n\n\n- Use a visual Git editor, e.g. [GitHub Desktop](https://desktop.github.com/)\n- Work in a new branch, especially if working with others\n  - Then merge into main/master when you're sure your changes are what you want\n- When coding, I recommend making your changes \n  - Then select relevant changed lines \n  - Use sensible commit messages, i.e., do not make one massive commit with commit message \"Edits\"!  \n\n    ::: {.cell layout-align=\"center\"}\n    ::: {.cell-output-display}\n    ![](img/github-desktop-select-lines.png){fig-align='center'}\n    :::\n    :::\n\n  \n- I prefer not to keep my Git repositories in a folder which is also synchronized with OneDrive/Google Drive, e.g., when you render an R Markdown file the syncing of all the auxiliary files that are created can be very annoying\n- When contributing to a new package, after forking on GitHub, then cloning to your local machine, and opening in RStudio/setting working directory to top level of package run `devtools::install_dev_deps()` to install all packages under Depends, Imports, and Suggests in its `DESCRIPTION` file\n- Your repo can contain much more than just your R package\n  - It will often additionally contain the static website for the package (made with pkgdown) which can be hosted for free using GitHub Pages/Netlify\n  - Remember to exclude the files/folders not the package by adding them to the `.Rbuildignore` file\n- Some people don't like others distributing packages through a GitHub repo, because `install_github()` looks for a change in the hash of the latest commit - but that may have been in a file not included in the source package\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
