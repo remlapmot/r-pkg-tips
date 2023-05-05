@@ -38,7 +38,8 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
     ```
     xcode-select --install
     ```
-  - Most dependencies are available using [Homebrew](https://brew.sh/), e.g.,
+  - Install the GNU Fortran compiler from the link given on <https://mac.r-project.org/tools/>
+  - Most other dependencies are available using a system package manager, the most popular of which is [Homebrew](https://brew.sh/), e.g.,
     ```
     brew install ...
     ```
