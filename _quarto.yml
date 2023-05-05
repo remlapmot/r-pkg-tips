@@ -25,3 +25,6 @@ format:
     link-external-icon: true
     theme: cosmo
     css: styles.css
+
+execute:
+  freeze: auto  # re-render only when source changes
