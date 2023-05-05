@@ -15,7 +15,6 @@ book:
     - 07-git-and-github.Rmd
     - 08-system-dependencies.Rmd
     - 99-session-info.Rmd
-  link-external-icon: true
   repo-url: https://github.com/remlapmot/r-pkg-tips
   repo-actions: source
   site-url: https://remlapmot.github.io/r-pkg-tips/
