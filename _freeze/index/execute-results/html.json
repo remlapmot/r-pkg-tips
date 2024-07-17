@@ -1,8 +1,11 @@
 {
-  "hash": "670553eacd5522dfa30105156bacba49",
+  "hash": "ba8d7f2860e9b21f7c994d8ac5ab497e",
   "result": {
-    "markdown": "---\nauthor: \"Tom Palmer\"\ndate: \"05 May 2023\"\n---\n\n\n\n\n## Introduction {.unnumbered}\n\nThe following is intended as a set of tips for people coding or about to code an R package.\n\nExtensive guides to writing an R package are given\n\n- at <https://r-pkgs.org/>\n- and <https://kbroman.org/pkg_primer/>\n\nthese tips are meant to supplement them.\n\nAlso look at the source code of your favourite R packages on GitHub\n\n- <https://github.com/rstudio/rmarkdown>\n",
-    "supporting": [],
+    "engine": "knitr",
+    "markdown": "---\nauthor: \"Tom Palmer\"\ndate: 2021-10-21\ndate-modified: \"17 July 2024\"\n---\n\n\n\n\n\n\n## Introduction {.unnumbered}\n\nThe following is intended as a set of tips for people coding or about to code an R package.\n\nExtensive guides to writing an R package are given\n\n- at <https://r-pkgs.org/>\n- and <https://kbroman.org/pkg_primer/>\n\nthese tips are meant to supplement them.\n\nAlso look at the source code of your favourite R packages on GitHub\n\n- <https://github.com/rstudio/rmarkdown>\n",
+    "supporting": [
+      "index_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

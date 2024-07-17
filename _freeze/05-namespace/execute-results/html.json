@@ -1,8 +1,11 @@
 {
-  "hash": "ad8beb0e90b1830bbc209f62a8920f9b",
+  "hash": "850d98a15f23d326fba7e4f24024954b",
   "result": {
-    "markdown": "# NAMESPACE\n\n\n\n\n  \n- The `NAMESPACE` file is written by devtools when you run `devtools::document()` on your correctly formatted helpfiles\n- You must specify to `@export` functions you want exported from your package!\n- Whilst it is tempting to `#' @importFrom pkgname fn` the functions you have used from other packages in the roxygen comments before your function definition in most cases you don't need to, as you should simply call the function with the namespace qualification, e.g., code `stats::lm(...)` instead of `lm()`\n- Read <https://r-pkgs.org/namespace.html> many times!\n- Remember what happens when we load a package - an environment of its objects are placed at the top of R's search path (figure from [here](https://adv-r.hadley.nz/environments.html#special-environments))  \n\n  ::: {.cell layout-align=\"center\"}\n  ::: {.cell-output-display}\n  ![](img/environments.png){fig-align='center'}\n  :::\n  :::\n\n- Every package has a package environment (the exported functions) and a namespace environment (both exported and internal functions)\n\n  ::: {.cell layout-align=\"center\"}\n  ::: {.cell-output-display}\n  ![](img/namespaces-and-environments.png){fig-align='center'}\n  :::\n  :::\n",
-    "supporting": [],
+    "engine": "knitr",
+    "markdown": "# NAMESPACE\n\n\n\n\n\n\n\n\n  \n- The `NAMESPACE` file is written by devtools when you run `devtools::document()` on your correctly formatted helpfiles\n- You must specify to `@export` functions you want exported from your package!\n- Whilst it is tempting to `#' @importFrom pkgname fn` the functions you have used from other packages in the roxygen comments before your function definition in most cases you don't need to, as you should simply call the function with the namespace qualification, e.g., code `stats::lm(...)` instead of `lm()`\n- Read <https://r-pkgs.org/namespace.html> many times!\n- Remember what happens when we load a package - an environment of its objects are placed at the top of R's search path (figure from [here](https://adv-r.hadley.nz/environments.html#special-environments))  \n\n\n\n  ::: {.cell layout-align=\"center\"}\n  ::: {.cell-output-display}\n  ![](img/environments.png){fig-align='center' width=539}\n  :::\n  :::\n\n\n\n- Every package has a package environment (the exported functions) and a namespace environment (both exported and internal functions)\n\n\n\n  ::: {.cell layout-align=\"center\"}\n  ::: {.cell-output-display}\n  ![](img/namespaces-and-environments.png){fig-align='center' width=536}\n  :::\n  :::\n",
+    "supporting": [
+      "05-namespace_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
