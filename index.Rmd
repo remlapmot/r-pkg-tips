@@ -1,6 +1,7 @@
 ---
 author: "Tom Palmer"
-date: "`r format(Sys.time(), '%d %B %Y')`"
+date: 2021-10-21
+date-modified: "`r format(Sys.time(), '%d %B %Y')`"
 ---
 
 ```{r setup, include=FALSE}
